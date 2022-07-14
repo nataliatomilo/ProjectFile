@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03E198C68AB4677406C5F0E7 /* Pods_BeautyPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5878E7A2411B6D327EFDCBD /* Pods_BeautyPlace.framework */; };
+		E56376E8286EE01E0007844A /* BeauticianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376E7286EE01E0007844A /* BeauticianTableViewController.swift */; };
+		E56376EB286F370D0007844A /* DepilitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376EA286F370D0007844A /* DepilitionTableViewController.swift */; };
+		E56376ED286F372E0007844A /* HaircutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376EC286F372E0007844A /* HaircutTableViewController.swift */; };
+		E56376EF286F374D0007844A /* HaircoloringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376EE286F374D0007844A /* HaircoloringTableViewController.swift */; };
+		E56376F1286F375D0007844A /* SpaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F0286F375D0007844A /* SpaTableViewController.swift */; };
+		E56376F3286F37710007844A /* MakeUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F2286F37710007844A /* MakeUpTableViewController.swift */; };
+		E56376F5286F37830007844A /* ManicureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F4286F37830007844A /* ManicureTableViewController.swift */; };
+		E56376F7286F37950007844A /* MassageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F6286F37950007844A /* MassageTableViewController.swift */; };
+		E56A3BC4287C6DD300BF93FC /* Annotation.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E50E39722875D83E00549BE9 /* Annotation.geojson */; };
+		E56A3C6B287FF09600BF93FC /* Json.json in Resources */ = {isa = PBXBuildFile; fileRef = E56A3C68287F3BAF00BF93FC /* Json.json */; };
+		E5D7D0B7286B5EB800712C82 /* SignInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */; };
+		E5D7D0B9286B5EB800712C82 /* MagnifuingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */; };
+		E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A7286B5EB800712C82 /* MapViewController.swift */; };
+		E5D7D0BB286B5EB800712C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0A8286B5EB800712C82 /* Assets.xcassets */; };
+		E5D7D0BC286B5EB800712C82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */; };
+		E5D7D0BD286B5EB800712C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0AA286B5EB800712C82 /* LaunchScreen.storyboard */; };
+		E5D7D0BE286B5EB800712C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0AC286B5EB800712C82 /* Main.storyboard */; };
+		E5D7D0BF286B5EB800712C82 /* CellOfTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */; };
+		E5D7D0C1286B5EB800712C82 /* BeautyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */; };
+		E5D7D0C2286B5EB800712C82 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */; };
+		E5D7D0C3286B5EB800712C82 /* StartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */; };
+		E5D7D0C4286B5EB800712C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */; };
+		E5D7D0C6286B5EB800712C82 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B5286B5EB800712C82 /* Annotation.swift */; };
+		E5D7D0C7286B5EB800712C82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B6286B5EB800712C82 /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9E33D1976520D821FDDD5829 /* Pods-BeautyPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPlace.debug.xcconfig"; path = "Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace.debug.xcconfig"; sourceTree = "<group>"; };
+		C5878E7A2411B6D327EFDCBD /* Pods_BeautyPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C7EBE854570D728BC69EA4 /* Pods-BeautyPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPlace.release.xcconfig"; path = "Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace.release.xcconfig"; sourceTree = "<group>"; };
+		E507361428366080006AE977 /* BeautyPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50E39722875D83E00549BE9 /* Annotation.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Annotation.geojson; sourceTree = "<group>"; };
+		E56376E7286EE01E0007844A /* BeauticianTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeauticianTableViewController.swift; sourceTree = "<group>"; };
+		E56376EA286F370D0007844A /* DepilitionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepilitionTableViewController.swift; sourceTree = "<group>"; };
+		E56376EC286F372E0007844A /* HaircutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutTableViewController.swift; sourceTree = "<group>"; };
+		E56376EE286F374D0007844A /* HaircoloringTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircoloringTableViewController.swift; sourceTree = "<group>"; };
+		E56376F0286F375D0007844A /* SpaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaTableViewController.swift; sourceTree = "<group>"; };
+		E56376F2286F37710007844A /* MakeUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUpTableViewController.swift; sourceTree = "<group>"; };
+		E56376F4286F37830007844A /* ManicureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManicureTableViewController.swift; sourceTree = "<group>"; };
+		E56376F6286F37950007844A /* MassageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageTableViewController.swift; sourceTree = "<group>"; };
+		E56A3C68287F3BAF00BF93FC /* Json.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Json.json; sourceTree = "<group>"; };
+		E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAndSignUpViewController.swift; sourceTree = "<group>"; };
+		E5D7D0A4286B5EB800712C82 /* BeautyPlace.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BeautyPlace.entitlements; sourceTree = "<group>"; };
+		E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifuingViewController.swift; sourceTree = "<group>"; };
+		E5D7D0A7286B5EB800712C82 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E5D7D0A8286B5EB800712C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5D7D0AB286B5EB800712C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5D7D0AD286B5EB800712C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellOfTableView.swift; sourceTree = "<group>"; };
+		E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautyRooms.swift; sourceTree = "<group>"; };
+		E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartListViewController.swift; sourceTree = "<group>"; };
+		E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E5D7D0B4286B5EB800712C82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5D7D0B5286B5EB800712C82 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		E5D7D0B6286B5EB800712C82 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E507361128366080006AE977 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03E198C68AB4677406C5F0E7 /* Pods_BeautyPlace.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9F76045BA15D1DFDF55FBCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E33D1976520D821FDDD5829 /* Pods-BeautyPlace.debug.xcconfig */,
+				C9C7EBE854570D728BC69EA4 /* Pods-BeautyPlace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E507360B28366080006AE977 = {
+			isa = PBXGroup;
+			children = (
+				E5D7D0A2286B5EB800712C82 /* BeautyPlace */,
+				E507361528366080006AE977 /* Products */,
+				D9F76045BA15D1DFDF55FBCA /* Pods */,
+				E7D46BEE39A96DFC3ECA43A9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E507361528366080006AE977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E507361428366080006AE977 /* BeautyPlace.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E51A55B0286C343700C6F8FD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */,
+				E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */,
+				E5D7D0A7286B5EB800712C82 /* MapViewController.swift */,
+				E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E51A55B1286C348600C6F8FD /* Structurs */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */,
+				E5D7D0B5286B5EB800712C82 /* Annotation.swift */,
+			);
+			path = Structurs;
+			sourceTree = "<group>";
+		};
+		E51A55B2286C35E200C6F8FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E56376E9286F35F80007844A /* BeautyRoomViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E56376E7286EE01E0007844A /* BeauticianTableViewController.swift */,
+				E56376EA286F370D0007844A /* DepilitionTableViewController.swift */,
+				E56376EC286F372E0007844A /* HaircutTableViewController.swift */,
+				E56376EE286F374D0007844A /* HaircoloringTableViewController.swift */,
+				E56376F0286F375D0007844A /* SpaTableViewController.swift */,
+				E56376F2286F37710007844A /* MakeUpTableViewController.swift */,
+				E56376F4286F37830007844A /* ManicureTableViewController.swift */,
+				E56376F6286F37950007844A /* MassageTableViewController.swift */,
+			);
+			path = BeautyRoomViewControllers;
+			sourceTree = "<group>";
+		};
+		E5D7D0A2286B5EB800712C82 /* BeautyPlace */ = {
+			isa = PBXGroup;
+			children = (
+				E56376E9286F35F80007844A /* BeautyRoomViewControllers */,
+				E51A55B2286C35E200C6F8FD /* Cells */,
+				E51A55B1286C348600C6F8FD /* Structurs */,
+				E51A55B0286C343700C6F8FD /* ViewController */,
+				E5D7D0A4286B5EB800712C82 /* BeautyPlace.entitlements */,
+				E5D7D0A8286B5EB800712C82 /* Assets.xcassets */,
+				E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */,
+				E5D7D0AA286B5EB800712C82 /* LaunchScreen.storyboard */,
+				E5D7D0AC286B5EB800712C82 /* Main.storyboard */,
+				E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */,
+				E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */,
+				E5D7D0B4286B5EB800712C82 /* Info.plist */,
+				E5D7D0B6286B5EB800712C82 /* SceneDelegate.swift */,
+				E50E39722875D83E00549BE9 /* Annotation.geojson */,
+				E56A3C68287F3BAF00BF93FC /* Json.json */,
+			);
+			path = BeautyPlace;
+			sourceTree = "<group>";
+		};
+		E7D46BEE39A96DFC3ECA43A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5878E7A2411B6D327EFDCBD /* Pods_BeautyPlace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E507361328366080006AE977 /* BeautyPlace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E507362828366082006AE977 /* Build configuration list for PBXNativeTarget "BeautyPlace" */;
+			buildPhases = (
+				C73ECCB669AE6C7E8078933F /* [CP] Check Pods Manifest.lock */,
+				E507361028366080006AE977 /* Sources */,
+				E507361128366080006AE977 /* Frameworks */,
+				E507361228366080006AE977 /* Resources */,
+				012E9FF0CEA6EDF775659295 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeautyPlace;
+			productName = BeautyPlace;
+			productReference = E507361428366080006AE977 /* BeautyPlace.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E507360C28366080006AE977 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					E507361328366080006AE977 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = E507360F28366080006AE977 /* Build configuration list for PBXProject "BeautyPlace" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+				he,
+				ar,
+				el,
+				ja,
+				uk,
+				es_MX,
+				zh_CN,
+				nb,
+				es,
+				pt_BR,
+				da,
+				it,
+				sk,
+				pt_PT,
+				ms,
+				sv,
+				cs,
+				ko,
+				hu,
+				tr,
+				pl,
+				zh_TW,
+				en_GB,
+				vi,
+				ru,
+				fr_CA,
+				fr,
+				fi,
+				id,
+				nl,
+				th,
+				pt,
+				ro,
+				hr,
+				hi,
+				ca,
+			);
+			mainGroup = E507360B28366080006AE977;
+			productRefGroup = E507361528366080006AE977 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E507361328366080006AE977 /* BeautyPlace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E507361228366080006AE977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D7D0BD286B5EB800712C82 /* LaunchScreen.storyboard in Resources */,
+				E56A3C6B287FF09600BF93FC /* Json.json in Resources */,
+				E5D7D0BB286B5EB800712C82 /* Assets.xcassets in Resources */,
+				E5D7D0BC286B5EB800712C82 /* GoogleService-Info.plist in Resources */,
+				E56A3BC4287C6DD300BF93FC /* Annotation.geojson in Resources */,
+				E5D7D0BE286B5EB800712C82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		012E9FF0CEA6EDF775659295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C73ECCB669AE6C7E8078933F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeautyPlace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E507361028366080006AE977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E56376F5286F37830007844A /* ManicureTableViewController.swift in Sources */,
+				E5D7D0C2286B5EB800712C82 /* TabBarViewController.swift in Sources */,
+				E5D7D0B9286B5EB800712C82 /* MagnifuingViewController.swift in Sources */,
+				E5D7D0C3286B5EB800712C82 /* StartListViewController.swift in Sources */,
+				E5D7D0B7286B5EB800712C82 /* SignInAndSignUpViewController.swift in Sources */,
+				E56376F7286F37950007844A /* MassageTableViewController.swift in Sources */,
+				E5D7D0BF286B5EB800712C82 /* CellOfTableView.swift in Sources */,
+				E5D7D0C1286B5EB800712C82 /* BeautyRooms.swift in Sources */,
+				E56376F3286F37710007844A /* MakeUpTableViewController.swift in Sources */,
+				E56376EF286F374D0007844A /* HaircoloringTableViewController.swift in Sources */,
+				E5D7D0C6286B5EB800712C82 /* Annotation.swift in Sources */,
+				E5D7D0C4286B5EB800712C82 /* AppDelegate.swift in Sources */,
+				E56376EB286F370D0007844A /* DepilitionTableViewController.swift in Sources */,
+				E56376F1286F375D0007844A /* SpaTableViewController.swift in Sources */,
+				E56376E8286EE01E0007844A /* BeauticianTableViewController.swift in Sources */,
+				E56376ED286F372E0007844A /* HaircutTableViewController.swift in Sources */,
+				E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */,
+				E5D7D0C7286B5EB800712C82 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5D7D0AA286B5EB800712C82 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5D7D0AB286B5EB800712C82 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E5D7D0AC286B5EB800712C82 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5D7D0AD286B5EB800712C82 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E507362628366082006AE977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E507362728366082006AE977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E507362928366082006AE977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E33D1976520D821FDDD5829 /* Pods-BeautyPlace.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeautyPlace/BeautyPlace.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TGWCFLUYS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeautyPlace/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.progect.BeautyPlace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E507362A28366082006AE977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C7EBE854570D728BC69EA4 /* Pods-BeautyPlace.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeautyPlace/BeautyPlace.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TGWCFLUYS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeautyPlace/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.progect.BeautyPlace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E507360F28366080006AE977 /* Build configuration list for PBXProject "BeautyPlace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E507362628366082006AE977 /* Debug */,
+				E507362728366082006AE977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E507362828366082006AE977 /* Build configuration list for PBXNativeTarget "BeautyPlace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E507362928366082006AE977 /* Debug */,
+				E507362A28366082006AE977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E507360C28366080006AE977 /* Project object */;
+}
