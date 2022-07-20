@@ -33,7 +33,6 @@ class Annotation : NSObject, MKAnnotation {
         self.phone = phone
         self.time = time
         self.coordinate = coordinate
-        
     }
     
     init?(feature: MKGeoJSONFeature) {

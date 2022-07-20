@@ -10,157 +10,86 @@ import MapKit
 import FirebaseDatabase
 import Cosmos
 
-class BeauticianTableViewController: UITableViewController {
+class BeauticianTableViewController: UITableViewController, CosmosProtocol {
     
-    var database: DatabaseReference!
-    var types = [BeautyRooms]()
-  //  var new: [DataSnapshot] = []
-  //  var searchController: UISearchController! = UISearchController(searchResultsController: nil)
+    var points = [CLLocationCoordinate2D]()
+    var properties = [Properties]() {
+        didSet {
+            properties.sort { $0.title < $1.title }
+        }
+    }
+    
     let cellIdentifier = "Cell"
-   
-
+    let imagesForTableView = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image5"), UIImage(named: "image6"), UIImage(named: "image7"), UIImage(named: "image8"), UIImage(named: "image9"), UIImage(named: "image10")]
+    var userdefault = UserDefaults.standard.object(forKey: "key")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        database = Database.database().reference(withPath: ".info/connected")
-            database.observe(.value, with: { snapshot in
-                if let connected = snapshot.value as? Bool, connected {
-                    print("Connected")
-                } else {
-                    print("Not connected")
-                    // show alert here
-                }
-            })
-    
-        
-       // view.backgroundColor = UIColor(named: "#DABDAB")
-                            tableView.dataSource = self
+        tableView.reloadData()
+        view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
-//        searchController.searchResultsUpdater = self
-//        searchController.dimsBackgroundDuringPresentation = false
-     //   definesPresentationContext = true
-      //  tableView.tableHeaderView = searchController.searchBar
-//        searchController.searchBar.tintColor = UIColor.white
-//        searchController.searchBar.barTintColor = UIColor(named: "#DABDAB")
-        
-//        database.child("properties")
-//            .queryOrdered(byChild: "subtitle")
-//            .queryEqual(toValue: "Косметология")
-//            .observe(.childAdded, with: { (snapshot) in
-//                print(snapshot)
-//            }, withCancel: nil)
-     //   loadNews()
-        nnn()
+        loadInit()
     }
-    func nnn() {
-        database.child("features").child("properties").child("subtitle").observeSingleEvent(of: .value, with: { snapshot in
-            print(snapshot)
-            
-        })
-    }
-//        database = Database.database().reference().root.child("features").child(id?).child("geometry/properties").observe(.childAdded , with: { snapshot in
-//
-//                if snapshot.exists() {
-//
-//                    let recent = snapshot.value as!  NSDictionary
-//
-//                     print(recent)
-//                }
-//                })
-//
-//    }
-//    override func didReceiveMemoryWarning() {
-//            super.didReceiveMemoryWarning()
-//        }
-    func loadNews() {
-        database.child("properties")
-            .queryOrdered(byChild: "subtitle")
-            .queryEqual(toValue: "Косметология")
-            .observe(.childAdded, with: { (snapshot) in
-                 let valueDictionary = snapshot.value as? [AnyHashable:String]
-                            
-                let name = valueDictionary!["title"]
-                let typesOfServices = valueDictionary!["subtitle"]
-                let address = valueDictionary!["address"]
-                let phone = valueDictionary!["phone"]
-                let time = valueDictionary!["time"]
-                self.types.append(BeautyRooms(name: name!, typesOfServices: typesOfServices as! String, address: address as! String, phone: phone as! String, time: time as! String))
-                                })
-           // database = Database.database().reference()
-//            database.child("properties").observe(.childAdded, with: { (snapshot) in
-//
-//                //print(snapshot)
-//
-//                if let valueDictionary = snapshot.value as? [AnyHashable:String]
-//                {
-//                    let name = valueDictionary["title"]
-//                    let typesOfServices = valueDictionary["subtitle"]
-//                    let address = valueDictionary["address"]
-//                    let phone = valueDictionary["phone"]
-//                    let time = valueDictionary["time"]
-//                    self.types.insert(BeautyRooms(name: name as! String, typesOfServices: typesOfServices as! String, address: address as! String, phone: phone as! String, time: time as! String), at: 0)
-//                    DispatchQueue.main.async {
-//                        self.tableView.reloadData()
-//                    }
-//                }
-//
-//            })
-//
-        }
-
     
-//    func filterResultsWithSearchString(searchString: String) {
-//        let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString) // 1
-//        let scopeIndex = searchController.searchBar.selectedScopeButtonIndex // 2
-//
-//
-//
-////            usersRef.queryOrdered(byChild: "email").queryStarting(atValue: email).queryEnding(atValue: email).observeSingleEvent(of: .value, with: { (snapshot) in
-////                if let values = snapshot.value as? [String: Any]{
-////                    print(values)
-////                }
-////            })
-////        let realm = try! Realm()
-////
-////        switch scopeIndex {
-////        case 0:
-////            new = realm.objects(BeautyRooms.self).filter(predicate).sorted(byKeyPath: "name", ascending: true)
-////        case 1:
-////            new = realm.objects(BeautyRooms.self).filter(predicate).sorted(byKeyPath: "created", ascending: true)
-////        default:
-////            new = realm.objects(BeautyRooms.self).filter(predicate) // 5
-////        }
-//    }
+    func loadInit() {
+        if let  fileName = Bundle.main.url(forResource: "Annotation", withExtension: "geojson"),
+           let placesData = try? Data(contentsOf: fileName),
+           let air = try! JSONSerialization.jsonObject(with: placesData, options: []) as? Dictionary<String, Any>,
+           let features = air["features"] as? [Dictionary<String, Any>] {
+            for feature in features {
+                if let geometry = feature["geometry"] as? Dictionary<String, Any>,
+                   let coorginates = geometry["coordinates"] as? [Double] {
+                    points.append(CLLocationCoordinate2D(latitude: coorginates[1], longitude: coorginates[0]))
+                }
+                if let property = feature["properties"] as? Dictionary<String, Any>,
+                   let title = property["title"] as? String,
+                   let subtitle = property.filter({$0.value as! String == "Косметология"})["subtitle"] as? String,
+                   let address = property["address"] as? String,
+                   let phone = property["phone"] as? String,
+                   let time = property["time"] as? String {
+                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time))
+                }
+            }
+        }
+    }
+    
+    func ratingDidChange(rating: Float) {
+        print(rating)
+        print(UserDefaults.standard.set(rating, forKey: "key"))
+        print(UserDefaults.standard.object(forKey: "key") as Any)
+    }
+    
+    func giveCosmos(cell: CellOfTableView) {
+        print("\(cell.reitingView.rating)")
+        
+    }
 }
 // MARK: - Table view data source
 extension BeauticianTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return types.count
+        return properties.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CellOfTableView
-        var n = BeautyRooms()
-        n = types[indexPath.row]
-        cell.titleLabel.text = n.name
-        cell.subtitleLabel.text = n.typesOfServices
-        cell.iconImageView.image = UIImage(named: "IconUncategorized")
-//
-//          let course = courseSnap.value
-//        cell.titleLabel.text = course.map(<#T##transform: (Any) throws -> U##(Any) throws -> U#>)
-//        cell.iconImageView.image = UIImage(named: "IconUncategorized")
-//        cell.addressLabel.text = specimen.address
-//
-        
-        
+        cell.delegate = self
+        cell.accessoryType = .disclosureIndicator
+        let room = properties[indexPath.row]
+        cell.titleLabel.text = room.title
+        cell.addressLabel.text = room.address
+        cell.iconImageView.image = imagesForTableView[indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let customVC = CustomViewController()
+        let room = properties[indexPath.row]
+        customVC.titleLabelNew = room.title
+        customVC.addressLabelNew = room.address
+        customVC.phoneLabelNew = room.phone
+        customVC.timeLabelNew = room.time
+        customVC.imageNew = imagesForTableView[indexPath.row]
+        self.navigationController?.pushViewController(customVC, animated: true)
+    }
 }
-//extension BeauticianTableViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        let searchString = searchController.searchBar.text!
-//        filterResultsWithSearchString(searchString: searchString)
-//        let searchResultsController = searchController.searchResultsUpdater as! UITableViewController
-//        searchResultsController.tableView.reloadData()
-//    }
-//}

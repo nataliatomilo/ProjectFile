@@ -6,16 +6,16 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class StartListViewController: UIViewController {
+    
+    let stackView: UIStackView = UIStackView()
+    let contentView: UIView = UIView()
+    let scrollView: UIScrollView = UIScrollView()
     let greetingsLabel: UILabel! = UILabel()
     let findTheServiceLabel: UILabel! = UILabel()
-    let magnifuingButton: UIButton! = UIButton()
-    let advertisingOnScrollView: UIScrollView! = UIScrollView()
-    var scView:UIScrollView!
-    let buttonPadding:CGFloat = 10
-    var xOffset:CGFloat = 10
-    let swipeGestureRecognizer = UISwipeGestureRecognizer()
     let lookingForLabel: UILabel! = UILabel()
     let beauticianButton: UIButton! = UIButton()
     let beauticianLabel: UILabel! = UILabel()
@@ -39,9 +39,6 @@ class StartListViewController: UIViewController {
         
         greetingsLabel.translatesAutoresizingMaskIntoConstraints = false
         findTheServiceLabel.translatesAutoresizingMaskIntoConstraints = false
-        magnifuingButton.translatesAutoresizingMaskIntoConstraints = false
-        advertisingOnScrollView.translatesAutoresizingMaskIntoConstraints = false
-        swipeGestureRecognizer.view?.translatesAutoresizingMaskIntoConstraints = false
         lookingForLabel.translatesAutoresizingMaskIntoConstraints = false
         depilationButton.translatesAutoresizingMaskIntoConstraints = false
         depilationLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -59,13 +56,15 @@ class StartListViewController: UIViewController {
         manicureLabel.translatesAutoresizingMaskIntoConstraints = false
         massageButton.translatesAutoresizingMaskIntoConstraints = false
         massageLabel.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(greetingsLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(stackView)
         view.addSubview(findTheServiceLabel)
-        view.addSubview(magnifuingButton)
-        view.addSubview(advertisingOnScrollView)
-        advertisingOnScrollView.addGestureRecognizer(didSwipe(for: .left))
-        advertisingOnScrollView.addGestureRecognizer(didSwipe(for: .right))
         view.addSubview(lookingForLabel)
         view.addSubview(depilationButton)
         depilationButton.addTarget(self, action: #selector(goToDepelitionVC(_:)), for: .primaryActionTriggered)
@@ -91,16 +90,26 @@ class StartListViewController: UIViewController {
         view.addSubview(massageButton)
         massageButton.addTarget(self, action: #selector(goToMassageVC(_:)), for: .primaryActionTriggered)
         view.addSubview(massageLabel)
-      
+        
         NSLayoutConstraint.activate([
             greetingsLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 48),
             greetingsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             findTheServiceLabel.topAnchor.constraint(equalTo: greetingsLabel.bottomAnchor, constant: 12),
             findTheServiceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             findTheServiceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            magnifuingButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 48),
-            magnifuingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            greetingsLabel.trailingAnchor.constraint(equalTo: magnifuingButton.leadingAnchor),
+            greetingsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             lookingForLabel.topAnchor.constraint(equalTo: findTheServiceLabel.bottomAnchor, constant: 212),
             lookingForLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             lookingForLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 170),
@@ -153,22 +162,14 @@ class StartListViewController: UIViewController {
             massageLabel.topAnchor.constraint(equalTo: massageButton.bottomAnchor),
             massageLabel.centerXAnchor.constraint(equalTo: massageButton.centerXAnchor)
         ])
+        
         view.backgroundColor = UIColor(named: "#DABDAB")
-        greetingsLabel.attributedText = NSAttributedString(string: "Hello, Name", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        greetingsLabel.attributedText = NSAttributedString(string: "Hello, friend", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        scrollView.backgroundColor = UIColor(named: "#DABDAB")
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 10
         findTheServiceLabel.attributedText = NSAttributedString(string: "Find the sevice you want", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .light), .foregroundColor: UIColor(named: "#6E5F55") as Any])
-        magnifuingButton.setImage(UIImage(named: "ImageMagnifuingButton"), for: .normal)
-        advertisingOnScrollView.frame = CGRect(x: 0, y: 130, width: view.bounds.width, height: 156)
-        advertisingOnScrollView.backgroundColor = UIColor(named: "#DABDAB")
-        for i in 0...10 {
-            let button = UIButton()
-            button.tag = i
-            button.backgroundColor = UIColor(named: "#D5ABDA")
-            button.layer.cornerRadius = 9
-            button.setTitle("Place for advertising \(i) ", for: .normal)
-            button.frame = CGRect(x: Int(xOffset), y: Int(CGFloat(buttonPadding)), width: Int(view.bounds.width - 50), height: 135)
-            xOffset = xOffset + CGFloat(buttonPadding) + button.frame.size.width
-            advertisingOnScrollView.addSubview(button)
-        }
         lookingForLabel.attributedText = NSAttributedString(string: "What are you looking for?", attributes: [.font: UIFont.systemFont(ofSize: 19, weight: .semibold), .foregroundColor: UIColor(named: "#6E5F55") as Any])
         depilationButton.layer.cornerRadius = 43
         beauticianButton.layer.cornerRadius = 43
@@ -202,70 +203,83 @@ class StartListViewController: UIViewController {
         makeUpLabel.attributedText = NSAttributedString(string: "MakeUp", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .light), .foregroundColor: UIColor(named: "#6E5F55") as Any])
         manicureLabel.attributedText = NSAttributedString(string: "Manicure", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .light), .foregroundColor: UIColor(named: "#6E5F55") as Any])
         massageLabel.attributedText = NSAttributedString(string: "Massage", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .light), .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        configureSubviews()
+        setupConstraints()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
     
-    @objc func didSwipe(for direction: UISwipeGestureRecognizer.Direction) -> UISwipeGestureRecognizer {
-        let swipe = UISwipeGestureRecognizer (target: self, action: #selector(didSwipeNew(_:)))
-        swipe.direction = direction
-        return swipe
-    }
-    @objc func didSwipeNew(_ sender: UISwipeGestureRecognizer) {
-        var contentoffSet = advertisingOnScrollView.contentOffset
-        switch sender .direction {
-        case .left:
-            contentoffSet.x += view.bounds.width
-            contentoffSet.x = max(0, 130, contentoffSet.x)
-        case .right:
-            contentoffSet.x -= view.bounds.width
-            
-        default:
-            break
-        }
-        UIView.animate(withDuration: 0.25) {
-            self.advertisingOnScrollView.contentOffset = contentoffSet
-        }
-    }
     @objc func goToBeautianVC(_ sender: UIButton) {
         let beauticianVC = BeauticianTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(beauticianVC, animated: true)
     }
+    
     @objc func goToDepelitionVC(_ sender: UIButton) {
         let depilitionVC = DepilitionTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(depilitionVC, animated: true)
     }
+    
     @objc func goToHaircutVC(_ sender: UIButton) {
         let haircutVC = HaircutTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(haircutVC, animated: true)
     }
+    
     @objc func goToHaircoloringVC(_ sender: UIButton) {
         let haircoloringVC = HaircoloringTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(haircoloringVC, animated: true)
     }
+    
     @objc func goToSpaVC(_ sender: UIButton) {
         let spaVC = SpaTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(spaVC, animated: true)
     }
+    
     @objc func goToMakeUpVC(_ sender: UIButton) {
         let makeUpVC = MakeUpTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(makeUpVC, animated: true)
     }
+    
     @objc func goToManicureVC(_ sender: UIButton) {
         let manicureVC = ManicureTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(manicureVC, animated: true)
     }
+    
     @objc func goToMassageVC(_ sender: UIButton) {
         let massageVC = MassageTableViewController()
         navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(massageVC, animated: true)
+    }
+    
+    func configureSubviews() {
+        
+        let viewButtonOne: UIButton! = UIButton()
+        viewButtonOne.setImage(UIImage(named: "image_1"), for: .normal)
+        viewButtonOne.backgroundColor = UIColor(named: "#D5ABDA")
+        viewButtonOne.layer.cornerRadius = 9
+        stackView.addArrangedSubview(viewButtonOne)
+        let viewButtonTwo: UIButton! = UIButton()
+        viewButtonTwo.setImage(UIImage(named: "image_2"), for: .normal)
+        viewButtonTwo.backgroundColor = UIColor(named: "#D5ABDA")
+        viewButtonTwo.layer.cornerRadius = 9
+        viewButtonTwo.contentMode = .scaleAspectFill
+        stackView.addArrangedSubview(viewButtonTwo)
+    }
+    
+    func setupConstraints() {
+        for view in stackView.arrangedSubviews {
+            NSLayoutConstraint.activate([
+                view.widthAnchor.constraint(equalToConstant: 400),
+                view.heightAnchor.constraint(equalToConstant: 156)
+            ])
+        }
     }
 }

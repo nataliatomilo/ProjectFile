@@ -9,21 +9,23 @@ import UIKit
 import Cosmos
 
 class CellOfTableView: UITableViewCell {
-  let titleLabel: UILabel! = UILabel()
-  let subtitleLabel: UILabel! = UILabel()
-  let distanceLabel: UILabel! = UILabel()
-  let iconImageView: UIImageView! = UIImageView()
-  let cosmosView: CosmosView = {
+    
+    var delegate: CosmosProtocol?
+    var reitingView: CosmosView = {
         var view = CosmosView()
         view.rating = 0
         view.settings.starSize = 15
         view.settings.starMargin = 1
         view.settings.fillMode = .half
-        view.settings.filledColor = UIColor(named: "#D5ABDA")!
-        view.settings.emptyBorderColor = UIColor(named: "#D5ABDA")!
-        view.settings.filledBorderColor = UIColor(named: "#D5ABDA")!
+        view.settings.filledColor = UIColor(named: "#7a49a5")!
+        view.settings.emptyBorderColor = UIColor(named: "#7a49a5")!
+        view.settings.filledBorderColor = UIColor(named: "#7a49a5")!
+        
         return view
     }()
+    
+    let titleLabel: UILabel! = UILabel()
+    let iconImageView: UIImageView! = UIImageView()
     let addressLabel: UILabel! = UILabel()
     let emailLabel: UILabel! = UILabel()
     let phoneLabel: UILabel! = UILabel()
@@ -34,6 +36,11 @@ class CellOfTableView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         styleCell()
+        delegate?.giveCosmos(cell: self)
+        reitingView.didFinishTouchingCosmos = { [self]
+            rating in
+            delegate?.ratingDidChange(rating: Float(rating))
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -46,61 +53,42 @@ class CellOfTableView: UITableViewCell {
     
     func styleCell() {
         backgroundColor = UIColor(named: "#C0A392")
-        locationButton.setImage(UIImage(named: "ImageLocation"), for: .normal)
         favouriteButton.setImage(UIImage(named: "ImageFavourite"), for: .normal)
-        phoneButton.setImage(UIImage(named: "ImagePhone"), for: .normal)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        cosmosView.translatesAutoresizingMaskIntoConstraints = false
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
-        locationButton.translatesAutoresizingMaskIntoConstraints = false
         favouriteButton.translatesAutoresizingMaskIntoConstraints = false
-        phoneButton.translatesAutoresizingMaskIntoConstraints = false
+        reitingView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(titleLabel)
-        contentView.addSubview(subtitleLabel)
-        contentView.addSubview(distanceLabel)
         contentView.addSubview(iconImageView)
-        contentView.addSubview(cosmosView)
         contentView.addSubview(addressLabel)
-        contentView.addSubview(emailLabel)
-        contentView.addSubview(phoneLabel)
-        contentView.addSubview(locationButton)
         contentView.addSubview(favouriteButton)
-        contentView.addSubview(phoneButton)
+        contentView.addSubview(reitingView)
         
         NSLayoutConstraint.activate([
             iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            iconImageView.widthAnchor.constraint(equalToConstant: 170),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
-            iconImageView.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -10),
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: -5),
-            subtitleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
-            subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            titleLabel.trailingAnchor.constraint(equalTo: cosmosView.leadingAnchor, constant: -10),
-            subtitleLabel.trailingAnchor.constraint(equalTo: cosmosView.leadingAnchor, constant: -10),
-            cosmosView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            cosmosView.bottomAnchor.constraint(equalTo: addressLabel.topAnchor, constant: -10),
-            cosmosView.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
-            addressLabel.topAnchor.constraint(equalTo: cosmosView.bottomAnchor, constant: 10),
-            addressLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 10),
+            addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            addressLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
             addressLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            locationButton.topAnchor.constraint(equalTo: contentView.topAnchor),
-            locationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            favouriteButton.topAnchor.constraint(equalTo: locationButton.bottomAnchor, constant: 2),
-            favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            phoneButton.topAnchor.constraint(equalTo: favouriteButton.bottomAnchor, constant: 2),
-            phoneButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
-            
+            addressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
+            favouriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            reitingView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor),
+            reitingView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
-        
+        titleLabel.attributedText = NSAttributedString(string: "  ", attributes: [.font: UIFont.systemFont(ofSize: 25, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        addressLabel.attributedText = NSAttributedString(string: "  ", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .light), .foregroundColor: UIColor(named: "#6E5F55") as Any, ])
+        addressLabel.numberOfLines = 3
     }
 }
 
+protocol CosmosProtocol {
+    func giveCosmos(cell: CellOfTableView)
+    func ratingDidChange(rating: Float)
+}

@@ -18,13 +18,13 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor(named: "#DABDAB")
         map.translatesAutoresizingMaskIntoConstraints = false
         locationButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(map)
         map.addSubview(locationButton)
         locationButton.addTarget(self, action: #selector(location(_:)), for: .primaryActionTriggered)
-    
+        
         NSLayoutConstraint.activate([
             map.topAnchor.constraint(equalTo: view.topAnchor),
             map.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -33,16 +33,12 @@ class MapViewController: UIViewController {
             locationButton.bottomAnchor.constraint(equalTo: map.bottomAnchor, constant: -80),
             locationButton.trailingAnchor.constraint(equalTo: map.trailingAnchor, constant: -20),
             locationButton.heightAnchor.constraint(equalToConstant: 60),
-            locationButton.widthAnchor.constraint(equalToConstant: 60),
+            locationButton.widthAnchor.constraint(equalToConstant: 60)
         ])
         
         locationButton.layer.cornerRadius = 25
         locationButton.layer.backgroundColor = CGColor(red: 249, green: 244, blue: 241, alpha: 0.5)
         locationButton.setImage(UIImage(named: "ImageLocation"), for: .normal)
-//        let fileManager = FileManager.default
-//            var config = Realm.Configuration()
-//            Realm.Configuration.defaultConfiguration = config
-//            print (Realm.Configuration.defaultConfiguration.fileURL!)
         map.delegate = self
         loadInit()
     }
@@ -94,18 +90,6 @@ class MapViewController: UIViewController {
             print("\(error)")
         }
     }
-//    func updateRoom() {
-//        let realm = try! Realm()
-//        
-//        try! realm.write {
-//            rooms.name = nameRoomTextField.text!
-//            rooms.typesOfServices = selectedTypes
-//            rooms.address = addressTextField.text!
-//            rooms.email = emailTextField.text!
-//            rooms.phone = numberTextField.text!
-//        }
-//    }
-    
 }
 //MARK: - Map View Delegate
 
@@ -115,7 +99,7 @@ extension MapViewController: CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: loc, latitudinalMeters: 500, longitudinalMeters: 500)
         map.setRegion(region, animated: true)
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         status != .notDetermined ? map.showsUserLocation = true : print("Authorization to use location data denied")
     }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		03E198C68AB4677406C5F0E7 /* Pods_BeautyPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5878E7A2411B6D327EFDCBD /* Pods_BeautyPlace.framework */; };
+		E55E6B4A2881CD5000D85D5F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E6B492881CD5000D85D5F /* Users.swift */; };
+		E55E6B4E288309FB00D85D5F /* CustomViewForProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E6B4D288309FB00D85D5F /* CustomViewForProfile.swift */; };
+		E55E6B5028830B5200D85D5F /* CustomViewForSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E6B4F28830B5200D85D5F /* CustomViewForSignUp.swift */; };
+		E55E6B5228836BA300D85D5F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E6B5128836BA300D85D5F /* Properties.swift */; };
+		E55E6B552884761A00D85D5F /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E6B542884761A00D85D5F /* CustomViewController.swift */; };
 		E56376E8286EE01E0007844A /* BeauticianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376E7286EE01E0007844A /* BeauticianTableViewController.swift */; };
 		E56376EB286F370D0007844A /* DepilitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376EA286F370D0007844A /* DepilitionTableViewController.swift */; };
 		E56376ED286F372E0007844A /* HaircutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376EC286F372E0007844A /* HaircutTableViewController.swift */; };
@@ -17,16 +22,16 @@
 		E56376F5286F37830007844A /* ManicureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F4286F37830007844A /* ManicureTableViewController.swift */; };
 		E56376F7286F37950007844A /* MassageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56376F6286F37950007844A /* MassageTableViewController.swift */; };
 		E56A3BC4287C6DD300BF93FC /* Annotation.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E50E39722875D83E00549BE9 /* Annotation.geojson */; };
-		E56A3C6B287FF09600BF93FC /* Json.json in Resources */ = {isa = PBXBuildFile; fileRef = E56A3C68287F3BAF00BF93FC /* Json.json */; };
+		E56A3C6F2880679300BF93FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56A3C6E2880679300BF93FC /* GoogleService-Info.plist */; };
+		E56A3C7328806AF200BF93FC /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A3C7228806AF200BF93FC /* RecordsViewController.swift */; };
+		E56A3C7628817C1600BF93FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A3C7528817C1600BF93FC /* ProfileViewController.swift */; };
 		E5D7D0B7286B5EB800712C82 /* SignInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */; };
 		E5D7D0B9286B5EB800712C82 /* MagnifuingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */; };
 		E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A7286B5EB800712C82 /* MapViewController.swift */; };
 		E5D7D0BB286B5EB800712C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0A8286B5EB800712C82 /* Assets.xcassets */; };
-		E5D7D0BC286B5EB800712C82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */; };
 		E5D7D0BD286B5EB800712C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0AA286B5EB800712C82 /* LaunchScreen.storyboard */; };
 		E5D7D0BE286B5EB800712C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7D0AC286B5EB800712C82 /* Main.storyboard */; };
 		E5D7D0BF286B5EB800712C82 /* CellOfTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */; };
-		E5D7D0C1286B5EB800712C82 /* BeautyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */; };
 		E5D7D0C2286B5EB800712C82 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */; };
 		E5D7D0C3286B5EB800712C82 /* StartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */; };
 		E5D7D0C4286B5EB800712C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */; };
@@ -40,6 +45,11 @@
 		C9C7EBE854570D728BC69EA4 /* Pods-BeautyPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyPlace.release.xcconfig"; path = "Target Support Files/Pods-BeautyPlace/Pods-BeautyPlace.release.xcconfig"; sourceTree = "<group>"; };
 		E507361428366080006AE977 /* BeautyPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50E39722875D83E00549BE9 /* Annotation.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Annotation.geojson; sourceTree = "<group>"; };
+		E55E6B492881CD5000D85D5F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		E55E6B4D288309FB00D85D5F /* CustomViewForProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewForProfile.swift; sourceTree = "<group>"; };
+		E55E6B4F28830B5200D85D5F /* CustomViewForSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewForSignUp.swift; sourceTree = "<group>"; };
+		E55E6B5128836BA300D85D5F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		E55E6B542884761A00D85D5F /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		E56376E7286EE01E0007844A /* BeauticianTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeauticianTableViewController.swift; sourceTree = "<group>"; };
 		E56376EA286F370D0007844A /* DepilitionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepilitionTableViewController.swift; sourceTree = "<group>"; };
 		E56376EC286F372E0007844A /* HaircutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutTableViewController.swift; sourceTree = "<group>"; };
@@ -48,17 +58,17 @@
 		E56376F2286F37710007844A /* MakeUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUpTableViewController.swift; sourceTree = "<group>"; };
 		E56376F4286F37830007844A /* ManicureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManicureTableViewController.swift; sourceTree = "<group>"; };
 		E56376F6286F37950007844A /* MassageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageTableViewController.swift; sourceTree = "<group>"; };
-		E56A3C68287F3BAF00BF93FC /* Json.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Json.json; sourceTree = "<group>"; };
+		E56A3C6E2880679300BF93FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E56A3C7228806AF200BF93FC /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		E56A3C7528817C1600BF93FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAndSignUpViewController.swift; sourceTree = "<group>"; };
 		E5D7D0A4286B5EB800712C82 /* BeautyPlace.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BeautyPlace.entitlements; sourceTree = "<group>"; };
 		E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifuingViewController.swift; sourceTree = "<group>"; };
 		E5D7D0A7286B5EB800712C82 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E5D7D0A8286B5EB800712C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5D7D0AB286B5EB800712C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5D7D0AD286B5EB800712C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellOfTableView.swift; sourceTree = "<group>"; };
-		E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautyRooms.swift; sourceTree = "<group>"; };
 		E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartListViewController.swift; sourceTree = "<group>"; };
 		E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +123,10 @@
 				E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */,
 				E5D7D0A7286B5EB800712C82 /* MapViewController.swift */,
 				E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */,
+				E56A3C7228806AF200BF93FC /* RecordsViewController.swift */,
+				E56A3C7528817C1600BF93FC /* ProfileViewController.swift */,
+				E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */,
+				E55E6B542884761A00D85D5F /* CustomViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -120,8 +134,9 @@
 		E51A55B1286C348600C6F8FD /* Structurs */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7D0B0286B5EB800712C82 /* BeautyRooms.swift */,
 				E5D7D0B5286B5EB800712C82 /* Annotation.swift */,
+				E55E6B5128836BA300D85D5F /* Properties.swift */,
+				E55E6B492881CD5000D85D5F /* Users.swift */,
 			);
 			path = Structurs;
 			sourceTree = "<group>";
@@ -130,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				E5D7D0AE286B5EB800712C82 /* CellOfTableView.swift */,
+				E55E6B4D288309FB00D85D5F /* CustomViewForProfile.swift */,
+				E55E6B4F28830B5200D85D5F /* CustomViewForSignUp.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,15 +175,13 @@
 				E51A55B0286C343700C6F8FD /* ViewController */,
 				E5D7D0A4286B5EB800712C82 /* BeautyPlace.entitlements */,
 				E5D7D0A8286B5EB800712C82 /* Assets.xcassets */,
-				E5D7D0A9286B5EB800712C82 /* GoogleService-Info.plist */,
 				E5D7D0AA286B5EB800712C82 /* LaunchScreen.storyboard */,
 				E5D7D0AC286B5EB800712C82 /* Main.storyboard */,
-				E5D7D0B1286B5EB800712C82 /* TabBarViewController.swift */,
 				E5D7D0B3286B5EB800712C82 /* AppDelegate.swift */,
-				E5D7D0B4286B5EB800712C82 /* Info.plist */,
 				E5D7D0B6286B5EB800712C82 /* SceneDelegate.swift */,
+				E5D7D0B4286B5EB800712C82 /* Info.plist */,
+				E56A3C6E2880679300BF93FC /* GoogleService-Info.plist */,
 				E50E39722875D83E00549BE9 /* Annotation.geojson */,
-				E56A3C68287F3BAF00BF93FC /* Json.json */,
 			);
 			path = BeautyPlace;
 			sourceTree = "<group>";
@@ -277,9 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D7D0BD286B5EB800712C82 /* LaunchScreen.storyboard in Resources */,
-				E56A3C6B287FF09600BF93FC /* Json.json in Resources */,
+				E56A3C6F2880679300BF93FC /* GoogleService-Info.plist in Resources */,
 				E5D7D0BB286B5EB800712C82 /* Assets.xcassets in Resources */,
-				E5D7D0BC286B5EB800712C82 /* GoogleService-Info.plist in Resources */,
 				E56A3BC4287C6DD300BF93FC /* Annotation.geojson in Resources */,
 				E5D7D0BE286B5EB800712C82 /* Main.storyboard in Resources */,
 			);
@@ -336,20 +350,26 @@
 			files = (
 				E56376F5286F37830007844A /* ManicureTableViewController.swift in Sources */,
 				E5D7D0C2286B5EB800712C82 /* TabBarViewController.swift in Sources */,
+				E56A3C7628817C1600BF93FC /* ProfileViewController.swift in Sources */,
+				E56A3C7328806AF200BF93FC /* RecordsViewController.swift in Sources */,
 				E5D7D0B9286B5EB800712C82 /* MagnifuingViewController.swift in Sources */,
 				E5D7D0C3286B5EB800712C82 /* StartListViewController.swift in Sources */,
 				E5D7D0B7286B5EB800712C82 /* SignInAndSignUpViewController.swift in Sources */,
+				E55E6B4E288309FB00D85D5F /* CustomViewForProfile.swift in Sources */,
 				E56376F7286F37950007844A /* MassageTableViewController.swift in Sources */,
 				E5D7D0BF286B5EB800712C82 /* CellOfTableView.swift in Sources */,
-				E5D7D0C1286B5EB800712C82 /* BeautyRooms.swift in Sources */,
 				E56376F3286F37710007844A /* MakeUpTableViewController.swift in Sources */,
 				E56376EF286F374D0007844A /* HaircoloringTableViewController.swift in Sources */,
+				E55E6B5228836BA300D85D5F /* Properties.swift in Sources */,
 				E5D7D0C6286B5EB800712C82 /* Annotation.swift in Sources */,
+				E55E6B4A2881CD5000D85D5F /* Users.swift in Sources */,
+				E55E6B552884761A00D85D5F /* CustomViewController.swift in Sources */,
 				E5D7D0C4286B5EB800712C82 /* AppDelegate.swift in Sources */,
 				E56376EB286F370D0007844A /* DepilitionTableViewController.swift in Sources */,
 				E56376F1286F375D0007844A /* SpaTableViewController.swift in Sources */,
 				E56376E8286EE01E0007844A /* BeauticianTableViewController.swift in Sources */,
 				E56376ED286F372E0007844A /* HaircutTableViewController.swift in Sources */,
+				E55E6B5028830B5200D85D5F /* CustomViewForSignUp.swift in Sources */,
 				E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */,
 				E5D7D0C7286B5EB800712C82 /* SceneDelegate.swift in Sources */,
 			);
