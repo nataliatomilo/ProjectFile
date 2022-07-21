@@ -10,21 +10,26 @@ import MapKit
 import FirebaseDatabase
 import Cosmos
 
-
 class HaircoloringTableViewController: UITableViewController {
+    
+       var ratingStorage = [Double]()
     
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
         didSet {
-            properties.sort {
-                $0.title < $1.title
-            }
+            properties.sort { $0.title < $1.title }
         }
     }
+    
     let cellIdentifier = "Cell"
+    let imagesForTableView = [UIImage(named: "image31"), UIImage(named: "image32"), UIImage(named: "image33"), UIImage(named: "image34"), UIImage(named: "image35"), UIImage(named: "image36"), UIImage(named: "image37"), UIImage(named: "image38"), UIImage(named: "image39"), UIImage(named: "image30")]
+    var userdefault = UserDefaults.standard.object(forKey: "key")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        for i in 0..<BeauticianTableViewController.rowsCount {
+//              ratingStorage[i] = Double(i) / 99 * 5
+//            }
         view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
@@ -51,8 +56,16 @@ class HaircoloringTableViewController: UITableViewController {
             }
         }
     }
+    
+//    func ratingDidChange(rating: Float) {
+//        print(UserDefaults.standard.set(rating, forKey: "key"))
+//    }
+//
+//    func giveCosmos(cell: CellOfTableView) {
+//        print(UserDefaults.standard.object(forKey: "key") as Any)
+//       // print("\(cell.reitingView.rating)")
+//    }
 }
-
 // MARK: - Table view data source
 extension HaircoloringTableViewController {
     
@@ -62,10 +75,43 @@ extension HaircoloringTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CellOfTableView
+       // cell.delegate = self
+        let rating = UserDefaults.standard.object(forKey: "key")
+        print(rating as Any)
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
-        cell.iconImageView.image = UIImage(named: "IconUncategorized")
+        cell.addressLabel.text = room.address
+        cell.iconImageView.image = imagesForTableView[indexPath.row]
+        
+        
+//        cell.reitingView.rating = ratingStorage[indexPath.row]
+        cell.reitingView.update()
+        
+       // cell.reitingView.rating = UserDefaults.standard.object(forKey: "key") as! Double
+        //cell.update
+              
+              // Store the star's rating when user lifts her finger
+//        cell.reitingView.didFinishTouchingCosmos = { [self] rating in
+//            UserDefaults.standard.set(rating, forKey: "key")
+//            print(rating)
+//
+//        }
         return cell
+            
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let customVC = CustomViewController()
+        let room = properties[indexPath.row]
+        customVC.titleLabelNew = room.title
+        customVC.addressLabelNew = room.address
+        customVC.phoneLabelNew = room.phone
+        customVC.timeLabelNew = room.time
+        customVC.imageNew = imagesForTableView[indexPath.row]
+        let newPoints = points[indexPath.row]
+        customVC.locationLabellatitudeNew = newPoints.latitude
+        customVC.locationLabellongitudeNew = newPoints.longitude
+        self.navigationController?.pushViewController(customVC, animated: true)
     }
 }

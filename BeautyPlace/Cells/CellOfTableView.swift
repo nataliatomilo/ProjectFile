@@ -11,6 +11,8 @@ import Cosmos
 class CellOfTableView: UITableViewCell {
     
     var delegate: CosmosProtocol?
+    var id: Int = 0
+    var textFieldForCell: UITextField! = UITextField()
     var reitingView: CosmosView = {
         var view = CosmosView()
         view.rating = 0
@@ -36,10 +38,22 @@ class CellOfTableView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         styleCell()
+        print(reitingView.rating)
+//        func update(_ rating: Double, id: Int) {
+//            reitingView.rating = rating
+//            self.id = id
+//            
+//            reitingView.didFinishTouchingCosmos = { [weak self] rating in
+//                print(self?.id as Any) // Access property here
+//            }
+//          }
         delegate?.giveCosmos(cell: self)
+        
         reitingView.didFinishTouchingCosmos = { [self]
             rating in
             delegate?.ratingDidChange(rating: Float(rating))
+            UserDefaults.standard.set(rating, forKey: "key")
+            print(rating)
         }
     }
     
@@ -71,6 +85,7 @@ class CellOfTableView: UITableViewCell {
             iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             iconImageView.widthAnchor.constraint(equalToConstant: 170),
+            iconImageView.heightAnchor.constraint(equalToConstant: 160),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
             addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
@@ -79,7 +94,7 @@ class CellOfTableView: UITableViewCell {
             addressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
             favouriteButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             favouriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            reitingView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor),
+            reitingView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             reitingView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         titleLabel.attributedText = NSAttributedString(string: "  ", attributes: [.font: UIFont.systemFont(ofSize: 25, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any])

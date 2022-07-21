@@ -11,19 +11,25 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     
+    weak var delegate: MapViewControllerDelegate?
     var map: MKMapView! = MKMapView()
     var location: CLLocationManager! = CLLocationManager()
     let locationButton: UIButton! = UIButton()
+    let locationPlacesButton: UIButton! = UIButton()
     var annotation: [Annotation] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "#DABDAB")
         map.translatesAutoresizingMaskIntoConstraints = false
         locationButton.translatesAutoresizingMaskIntoConstraints = false
+        locationPlacesButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(map)
         map.addSubview(locationButton)
+        map.addSubview(locationPlacesButton)
         locationButton.addTarget(self, action: #selector(location(_:)), for: .primaryActionTriggered)
+        locationPlacesButton.addTarget(self, action: #selector(locationPlaces(_:)), for: .primaryActionTriggered)
         
         NSLayoutConstraint.activate([
             map.topAnchor.constraint(equalTo: view.topAnchor),
@@ -33,18 +39,26 @@ class MapViewController: UIViewController {
             locationButton.bottomAnchor.constraint(equalTo: map.bottomAnchor, constant: -80),
             locationButton.trailingAnchor.constraint(equalTo: map.trailingAnchor, constant: -20),
             locationButton.heightAnchor.constraint(equalToConstant: 60),
-            locationButton.widthAnchor.constraint(equalToConstant: 60)
+            locationButton.widthAnchor.constraint(equalToConstant: 60),
+            locationPlacesButton.bottomAnchor.constraint(equalTo: locationButton.bottomAnchor, constant: -80),
+            locationPlacesButton.trailingAnchor.constraint(equalTo: map.trailingAnchor, constant: -20),
+            locationPlacesButton.heightAnchor.constraint(equalToConstant: 60),
+            locationPlacesButton.widthAnchor.constraint(equalToConstant: 60),
         ])
         
         locationButton.layer.cornerRadius = 25
         locationButton.layer.backgroundColor = CGColor(red: 249, green: 244, blue: 241, alpha: 0.5)
         locationButton.setImage(UIImage(named: "ImageLocation"), for: .normal)
+        locationPlacesButton.layer.cornerRadius = 25
+        locationPlacesButton.layer.backgroundColor = CGColor(red: 249, green: 244, blue: 241, alpha: 0.5)
+        locationPlacesButton.setImage(UIImage(named: "ImageLocationPlaces"), for: .normal)
         map.delegate = self
+        location.delegate = self
         loadInit()
     }
     
     @objc func location(_ sender: UIButton) {
-        location.delegate = self
+    
         location.desiredAccuracy = kCLLocationAccuracyBest
         map.showsUserLocation = true
         switch location.authorizationStatus {
@@ -59,11 +73,21 @@ class MapViewController: UIViewController {
             print(location.location as Any)
         case .authorizedWhenInUse:
             location.startUpdatingLocation()
-            guard let correntLocation = location.location else {return}
+            let correntLocation = map.userLocation.coordinate
             print(correntLocation)
         @unknown default:
             return
         }
+        if CLLocationManager.locationServicesEnabled() {
+            location.requestWhenInUseAuthorization()
+        }
+    }
+    
+    @objc func locationPlaces(_ sender: UIButton) {
+        let coordinate = CLLocationCoordinate2D(latitude: (delegate?.getLat(vc: self))!, longitude: delegate?.getLon(vc: self) ?? 0.0)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        map.setRegion(region, animated: true)
+        
         if CLLocationManager.locationServicesEnabled() {
             location.requestWhenInUseAuthorization()
         }
@@ -95,8 +119,8 @@ class MapViewController: UIViewController {
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let loc = map.userLocation.coordinate
-        let region = MKCoordinateRegion(center: loc, latitudinalMeters: 500, longitudinalMeters: 500)
+
+        let region = MKCoordinateRegion(center: manager.location!.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         map.setRegion(region, animated: true)
     }
     
@@ -130,4 +154,9 @@ extension MapViewController: MKMapViewDelegate {
         let launchOption = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         places.mapItem?.openInMaps(launchOptions: launchOption)
     }
+}
+
+protocol MapViewControllerDelegate: AnyObject {
+    func getLat(vc: MapViewController) -> Double
+    func getLon(vc: MapViewController) -> Double
 }

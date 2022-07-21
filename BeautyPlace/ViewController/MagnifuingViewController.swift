@@ -7,16 +7,23 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 import Cosmos
 
+
 class MagnifuingViewController: UITableViewController {
-    var points = [CLLocationCoordinate2D]()
-    var properties = [Properties]()
-    let cellIdentifier = "Cell"
+    
+    var ratingStorage = [Double]()
+ var points = [CLLocationCoordinate2D]()
+ var properties = [Properties]()
+ let cellIdentifier = "Cell"
+    let imagesForTableView = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image5"), UIImage(named: "image6"), UIImage(named: "image7"), UIImage(named: "image8"), UIImage(named: "image9"), UIImage(named: "image10"), UIImage(named: "image11"), UIImage(named: "image12"), UIImage(named: "image13"), UIImage(named: "image14"), UIImage(named: "image15"), UIImage(named: "image16"), UIImage(named: "image17"), UIImage(named: "image18"), UIImage(named: "image19"), UIImage(named: "image20"), UIImage(named: "image21"), UIImage(named: "image22"), UIImage(named: "image23"), UIImage(named: "image24"), UIImage(named: "image25"), UIImage(named: "image26"), UIImage(named: "image27"), UIImage(named: "image28"), UIImage(named: "image29"), UIImage(named: "image30"), UIImage(named: "image31"), UIImage(named: "image32"), UIImage(named: "image33"), UIImage(named: "image34"),UIImage(named: "image35"), UIImage(named: "image36"), UIImage(named: "image37"), UIImage(named: "image38"), UIImage(named: "image39"), UIImage(named: "image40")]
+ var userdefault = UserDefaults.standard.object(forKey: "key")
     var searchController: UISearchController! = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         searchController.dimsBackgroundDuringPresentation = false
@@ -74,7 +81,8 @@ extension MagnifuingViewController {
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
-        cell.iconImageView.image = UIImage(named: "IconUncategorized")
+        cell.addressLabel.text = room.address
+        cell.iconImageView.image = imagesForTableView[indexPath.row]
         return cell
     }
 }

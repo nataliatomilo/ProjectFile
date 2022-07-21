@@ -262,7 +262,7 @@ class StartListViewController: UIViewController {
     func configureSubviews() {
         
         let viewButtonOne: UIButton! = UIButton()
-        viewButtonOne.setImage(UIImage(named: "image_1"), for: .normal)
+        viewButtonOne.setImage(UIImage(named: "image_4"), for: .normal)
         viewButtonOne.backgroundColor = UIColor(named: "#D5ABDA")
         viewButtonOne.layer.cornerRadius = 9
         stackView.addArrangedSubview(viewButtonOne)
