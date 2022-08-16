@@ -12,12 +12,7 @@ import Cosmos
 
 class BeauticianTableViewController: UITableViewController, CosmosProtocol {
     
-
-    private static var rowsCount = 100
-      private var ratingStorage = [Double](repeating: 0, count: rowsCount)
-      
-    var newCosmos = [Double]()
-    var collection = [CellOfTableView]()
+    let cellNew = CellOfTableView()
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
         didSet {
@@ -26,21 +21,11 @@ class BeauticianTableViewController: UITableViewController, CosmosProtocol {
     }
     let cellIdentifier = "Cell"
     let imagesForTableView = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image5"), UIImage(named: "image6"), UIImage(named: "image7"), UIImage(named: "image8"), UIImage(named: "image9"), UIImage(named: "image10")]
-  //  var userdefault = UserDefaults.standard.object(forKey: "key")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        collection.forEach({
-//            cell in newCosmos.append(cell.reitingView.rating)
-//            let ser: Void = UserDefaults.standard.set(cell.reitingView.rating, forKey: "rating")
-//            print(ser)
-//        })
-        for i in 0..<BeauticianTableViewController.rowsCount {
-             ratingStorage[i] = Double(i) / 99 * 5
-           }
-//        for i in 0..<BeauticianTableViewController.rowsCount {
-//              ratingStorage[i] = Double(i) / 99 * 5
-//            }
+
+        cellNew.delegate = self
         view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
@@ -69,37 +54,31 @@ class BeauticianTableViewController: UITableViewController, CosmosProtocol {
     }
     
     func ratingDidChange(rating: Float) {
-        UserDefaults.standard.set(rating, forKey: "key")
-        UserDefaults.standard.object(forKey: "key")
+        rating
+       // print(UserDefaults.standard.object(forKey: "cosmos") as Any)
     }
 
     func giveCosmos(cell: CellOfTableView) {
-    UserDefaults.standard.object(forKey: "key")
-       // print("\(cell.reitingView.rating)")
+    UserDefaults.standard.object(forKey: "cosmos")
+        print("\(cell)")
     }
 }
 // MARK: - Table view data source
 extension BeauticianTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return BeauticianTableViewController.rowsCount
+
         return properties.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CellOfTableView
-       // collection.append(cell)
-       // cell.delegate = self
-        //let rating = UserDefaults.standard.object(forKey: "key")
-       // print(rating as Any)
-        let rating = ratingStorage[indexPath.row]
-        //cell.update(rating)
-        cell.reitingView.didFinishTouchingCosmos = { [weak self] rating in
-               self?.ratingStorage[indexPath.row] = rating
+        cell.delegate = self
+        cell.reitingView.didFinishTouchingCosmos = { rating in
             UserDefaults.standard.set(rating, forKey: "cosmos")
-            print(UserDefaults.standard.set(rating, forKey: "cosmos"))
+          //  print(UserDefaults.standard.set(rating, forKey: "cosmos"))
              }
-        UserDefaults.standard.object(forKey: "cosmos")
+        
              
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
@@ -107,19 +86,6 @@ extension BeauticianTableViewController {
         cell.addressLabel.text = room.address
         cell.iconImageView.image = imagesForTableView[indexPath.row]
         
-        
-//        cell.reitingView.rating = ratingStorage[indexPath.row]
-      //  cell.reitingView.update()
-        
-       // cell.reitingView.rating = UserDefaults.standard.object(forKey: "key") as! Double
-        //cell.update
-              
-              // Store the star's rating when user lifts her finger
-//        cell.reitingView.didFinishTouchingCosmos = { [self] rating in
-//            UserDefaults.standard.set(rating, forKey: "key")
-//            print(rating)
-//
-//        }
         return cell
             
     }

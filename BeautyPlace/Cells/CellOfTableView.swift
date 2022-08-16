@@ -38,7 +38,7 @@ class CellOfTableView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         styleCell()
-        print(reitingView.rating)
+       // print(reitingView.rating)
 //        func update(_ rating: Double, id: Int) {
 //            reitingView.rating = rating
 //            self.id = id
@@ -51,9 +51,9 @@ class CellOfTableView: UITableViewCell {
         
         reitingView.didFinishTouchingCosmos = { [self]
             rating in
-            delegate?.ratingDidChange(rating: Float(rating))
+            let new: ()? = delegate?.ratingDidChange(rating: Float(rating))
             UserDefaults.standard.set(rating, forKey: "key")
-            print(rating)
+            print(new as Any)
         }
     }
     

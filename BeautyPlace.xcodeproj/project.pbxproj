@@ -25,6 +25,9 @@
 		E56A3C6F2880679300BF93FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56A3C6E2880679300BF93FC /* GoogleService-Info.plist */; };
 		E56A3C7328806AF200BF93FC /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A3C7228806AF200BF93FC /* RecordsViewController.swift */; };
 		E56A3C7628817C1600BF93FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A3C7528817C1600BF93FC /* ProfileViewController.swift */; };
+		E5CE1067289FFBE30076902E /* ViewForSignInAndSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CE1066289FFBE30076902E /* ViewForSignInAndSignUp.swift */; };
+		E5CEAC1928AB8F2F000F9FDD /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEAC1828AB8F2F000F9FDD /* SignIn.swift */; };
+		E5CEAC1B28AB8F40000F9FDD /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CEAC1A28AB8F40000F9FDD /* SignUp.swift */; };
 		E5D7D0B7286B5EB800712C82 /* SignInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */; };
 		E5D7D0B9286B5EB800712C82 /* MagnifuingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */; };
 		E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7D0A7286B5EB800712C82 /* MapViewController.swift */; };
@@ -61,6 +64,9 @@
 		E56A3C6E2880679300BF93FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E56A3C7228806AF200BF93FC /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		E56A3C7528817C1600BF93FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E5CE1066289FFBE30076902E /* ViewForSignInAndSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForSignInAndSignUp.swift; sourceTree = "<group>"; };
+		E5CEAC1828AB8F2F000F9FDD /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		E5CEAC1A28AB8F40000F9FDD /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInAndSignUpViewController.swift; sourceTree = "<group>"; };
 		E5D7D0A4286B5EB800712C82 /* BeautyPlace.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BeautyPlace.entitlements; sourceTree = "<group>"; };
 		E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifuingViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +125,6 @@
 		E51A55B0286C343700C6F8FD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */,
 				E5D7D0B2286B5EB800712C82 /* StartListViewController.swift */,
 				E5D7D0A7286B5EB800712C82 /* MapViewController.swift */,
 				E5D7D0A6286B5EB800712C82 /* MagnifuingViewController.swift */,
@@ -166,9 +171,37 @@
 			path = BeautyRoomViewControllers;
 			sourceTree = "<group>";
 		};
+		E5CE1063289D25180076902E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5CEAC1828AB8F2F000F9FDD /* SignIn.swift */,
+				E5CEAC1A28AB8F40000F9FDD /* SignUp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5CE1064289D25290076902E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5CE1066289FFBE30076902E /* ViewForSignInAndSignUp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5CE1065289D25330076902E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5D7D0A3286B5EB800712C82 /* SignInAndSignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E5D7D0A2286B5EB800712C82 /* BeautyPlace */ = {
 			isa = PBXGroup;
 			children = (
+				E5CE1065289D25330076902E /* Controller */,
+				E5CE1064289D25290076902E /* View */,
+				E5CE1063289D25180076902E /* Model */,
 				E56376E9286F35F80007844A /* BeautyRoomViewControllers */,
 				E51A55B2286C35E200C6F8FD /* Cells */,
 				E51A55B1286C348600C6F8FD /* Structurs */,
@@ -349,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E56376F5286F37830007844A /* ManicureTableViewController.swift in Sources */,
+				E5CEAC1928AB8F2F000F9FDD /* SignIn.swift in Sources */,
 				E5D7D0C2286B5EB800712C82 /* TabBarViewController.swift in Sources */,
 				E56A3C7628817C1600BF93FC /* ProfileViewController.swift in Sources */,
 				E56A3C7328806AF200BF93FC /* RecordsViewController.swift in Sources */,
@@ -371,6 +405,8 @@
 				E56376ED286F372E0007844A /* HaircutTableViewController.swift in Sources */,
 				E55E6B5028830B5200D85D5F /* CustomViewForSignUp.swift in Sources */,
 				E5D7D0BA286B5EB800712C82 /* MapViewController.swift in Sources */,
+				E5CE1067289FFBE30076902E /* ViewForSignInAndSignUp.swift in Sources */,
+				E5CEAC1B28AB8F40000F9FDD /* SignUp.swift in Sources */,
 				E5D7D0C7286B5EB800712C82 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
