@@ -1,9 +1,3 @@
-//
-//  CellOfTableView.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 20.06.22.
-//
 
 import UIKit
 import Cosmos
@@ -38,15 +32,7 @@ class CellOfTableView: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         styleCell()
-       // print(reitingView.rating)
-//        func update(_ rating: Double, id: Int) {
-//            reitingView.rating = rating
-//            self.id = id
-//            
-//            reitingView.didFinishTouchingCosmos = { [weak self] rating in
-//                print(self?.id as Any) // Access property here
-//            }
-//          }
+        
         delegate?.giveCosmos(cell: self)
         
         reitingView.didFinishTouchingCosmos = { [self]
@@ -66,7 +52,6 @@ class CellOfTableView: UITableViewCell {
     }
     
     func styleCell() {
-        backgroundColor = UIColor(named: "#C0A392")
         favouriteButton.setImage(UIImage(named: "ImageFavourite"), for: .normal)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false

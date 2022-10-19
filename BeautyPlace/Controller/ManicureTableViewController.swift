@@ -1,16 +1,10 @@
-//
-//  SpaTableViewController.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 1.07.22.
-//
 
 import UIKit
 import MapKit
 import FirebaseDatabase
 import Cosmos
 
-class SpaTableViewController: UITableViewController {
+class ManicureTableViewController: UITableViewController {
     
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
@@ -20,12 +14,10 @@ class SpaTableViewController: UITableViewController {
             }
         }
     }
-    
     let cellIdentifier = "Cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
     }
@@ -45,15 +37,17 @@ class SpaTableViewController: UITableViewController {
                    let subtitle = property.filter({$0.value as! String == "Spa"})["subtitle"] as? String,
                    let address = property["address"] as? String,
                    let phone = property["phone"] as? String,
-                   let time = property["time"] as? String {
-                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time))
+                   let time = property["time"] as? String,
+                let image = property["image"] as? String {
+                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time, image: image))
                 }
             }
         }
     }
 }
+
 // MARK: - Table view data source
-extension SpaTableViewController {
+extension ManicureTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return properties.count
@@ -64,7 +58,9 @@ extension SpaTableViewController {
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
-        cell.iconImageView.image = UIImage(named: "IconUncategorized")
+        cell.addressLabel.text = room.address
+        cell.iconImageView.loadFrom(URLAddress: room.image)
+
         return cell
     }
 }

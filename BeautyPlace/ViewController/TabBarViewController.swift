@@ -1,9 +1,3 @@
-//
-//  TabBarViewController.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 7.06.22.
-//
 
 import UIKit
 

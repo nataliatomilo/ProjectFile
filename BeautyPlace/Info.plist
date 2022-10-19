@@ -22,8 +22,8 @@
 	<string>BeautyPlace</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
+		<string>fbapi</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

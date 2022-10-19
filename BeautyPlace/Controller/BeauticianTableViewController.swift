@@ -1,31 +1,22 @@
-//
-//  MakeUpTableViewController.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 1.07.22.
-//
 
 import UIKit
 import MapKit
 import FirebaseDatabase
 import Cosmos
 
-class MakeUpTableViewController: UITableViewController {
+class BeauticianTableViewController: UITableViewController {
     
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
         didSet {
-            properties.sort {
-                $0.title < $1.title
-            }
+            properties.sort { $0.title < $1.title }
         }
     }
-    
     let cellIdentifier = "Cell"
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "#DABDAB")
+        navigationController?.navigationBar.tintColor = .black
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
     }
@@ -42,11 +33,12 @@ class MakeUpTableViewController: UITableViewController {
                 }
                 if let property = feature["properties"] as? Dictionary<String, Any>,
                    let title = property["title"] as? String,
-                   let subtitle = property.filter({$0.value as! String == "MakeUp"})["subtitle"] as? String,
+                   let subtitle = property.filter({$0.value as! String == "Косметология"})["subtitle"] as? String,
                    let address = property["address"] as? String,
                    let phone = property["phone"] as? String,
-                   let time = property["time"] as? String {
-                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time))
+                   let time = property["time"] as? String,
+                   let image = property["image"] as? String {
+                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time, image: image))
                 }
             }
         }
@@ -54,8 +46,8 @@ class MakeUpTableViewController: UITableViewController {
 }
 
 // MARK: - Table view data source
-extension MakeUpTableViewController {
-    
+extension BeauticianTableViewController {
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return properties.count
     }
@@ -65,7 +57,38 @@ extension MakeUpTableViewController {
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
-        cell.iconImageView.image = UIImage(named: "IconUncategorized")
+        cell.addressLabel.text = room.address
+        cell.iconImageView.loadFrom(URLAddress: room.image)
+      
         return cell
+            
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let customVC = CustomViewController()
+        let room = properties[indexPath.row]
+        customVC.titleLabelNew = room.title
+        customVC.addressLabelNew = room.address
+        customVC.phoneLabelNew = room.phone
+        customVC.timeLabelNew = room.time
+        //customVC.imageNew = imagesForTableView[indexPath.row]
+        let newPoints = points[indexPath.row]
+        customVC.locationLabellatitudeNew = newPoints.latitude
+        customVC.locationLabellongitudeNew = newPoints.longitude
+        self.navigationController?.pushViewController(customVC, animated: true)
+    }
+}
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else { return }
+        DispatchQueue.main.async {
+            [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    self?.image = loadedImage
+                }
+            }
+        }
     }
 }

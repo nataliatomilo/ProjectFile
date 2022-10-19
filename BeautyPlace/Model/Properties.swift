@@ -13,4 +13,5 @@ struct Properties: Codable {
     let address: String
     let phone: String
     let time: String
+    let image: String
 }

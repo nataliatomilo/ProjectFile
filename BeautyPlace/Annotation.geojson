@@ -8,7 +8,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Дзержинского, 123, подъезд 4",
                 "phone": "375447000749",
-                "time": "09:00 - 21:00, ежедневно"
+                "time": "09:00 - 21:00, ежедневно",
+                "image": "https://medlife.hospital/images/services/ml_cosmetology.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -25,7 +26,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Дзержинского, 131, помещение 52",
                 "phone": "375256613152",
-                "time": "10:00 - 21:00, сб., вскр.- выходной"
+                "time": "10:00 - 21:00, сб., вскр.- выходной",
+                "image": "https://static.mobile-business.by/media/services/cosmetology_mAfXXzK.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -42,7 +44,8 @@
                 "subtitle": "Косметология",
                 "address": "ул. Яна Чечота, 30, помещение 1Н",
                 "phone": "375293763958",
-                "time": "пн.-сб. 09:00 - 21:00, вскр. 09:00 - 20:00"
+                "time": "пн.-сб. 09:00 - 21:00, вскр. 09:00 - 20:00",
+                "image": "https://doctortut.by/upload/resize_cache/medialibrary/0c3/600_480_2/IMG_7977.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -59,7 +62,8 @@
                 "subtitle": "Косметология",
                 "address": "ул. Ежи Гедройца, 10",
                 "phone": "375256719780",
-                "time": "10:00 - 22:00, ежедневно"
+                "time": "10:00 - 22:00, ежедневно",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFO2bailOyjfTTuGgrsky4vvaUN-yFkJ0ZDw&usqp=CAU"
             },
             "geometry": {
                 "type": "Point",
@@ -76,7 +80,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Дзержинского, 115, офис 446, этаж 2",
                 "phone": "375296128162, 375295028162",
-                "time": "пн.-сб. 11:00 - 20:00, вскр.- выходной"
+                "time": "пн.-сб. 11:00 - 20:00, вскр.- выходной",
+                "image": "https://estetic-center.by/storage/articles-images/8MDhT4M15kscc086FZb7Y5uEZCijnQT1.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -93,7 +98,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Любимова, 6",
                 "phone": "+375 44 777-77-58, +375 29 555-55-62, +375 17 397-21-86",
-                "time": "08:00 - 21:00, ежедневно"
+                "time": "08:00 - 21:00, ежедневно",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkobxztqxMuDmGuoJqY31EulsGk6TilrjK4ZofCs8uZEeUV2sv_zoKvCjybAM5AVBJSOU&usqp=CAU"
             },
             "geometry": {
                 "type": "Point",
@@ -110,7 +116,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Газеты Звязда, 47, этаж 1",
                 "phone": "+375 29 372-75-98, +375 17 366-75-98",
-                "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 18:00, вскр. 10:00 - 17:00"
+                "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 18:00, вскр. 10:00 - 17:00",
+                "image": "https://i.pinimg.com/1200x/5e/5d/1d/5e5d1d7181cab77962c90ec6dc1350f2.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -127,7 +134,8 @@
                 "subtitle": "Косметология",
                 "address": "просп. Газеты Звязда, 28",
                 "phone": "+375 29 529-43-01, +375 17 399-43-09, +375 29 699-43-01",
-                "time": "09:00 - 21:00, ежедневно"
+                "time": "09:00 - 21:00, ежедневно",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqNQtqB_nHYIBeGDaCCwVZ3m2Od9BJm_Fiw&usqp=CAU"
             },
             "geometry": {
                 "type": "Point",
@@ -144,7 +152,8 @@
                 "subtitle": "Косметология",
                 "address": "ул. Рафиева, 25/1",
                 "phone": "+375 29 663-62-38, +375 29 272-03-05",
-                "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 19:00, вскр. 10:00 - 18:00"
+                "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 19:00, вскр. 10:00 - 18:00",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXiE8xI1GHdnnNAwjhsGm7NI7v_U9D28aFw&usqp=CAU"
             },
             "geometry": {
                 "type": "Point",
@@ -161,7 +170,8 @@
                 "subtitle": "Косметология",
                 "address": "ул. Рафиева, 55, помещение 5",
                 "phone": "375447227070",
-                "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 09:00 - 20:00"
+                "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 09:00 - 20:00",
+                "image": "https://evos.by/wp-content/uploads/2021/03/biorevitalizacziya-385x385.jpg"
             },
             "geometry": {
                 "type": "Point",
@@ -178,7 +188,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Ежи Гедройца, 2",
               "phone": "+375 29 279-51-08, +375 29 649-51-08",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://picsum.photos/id/1021/367/267"
           },
           "geometry": {
             "type": "Point",
@@ -195,7 +206,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Сергея Есенина, 6",
               "phone": "+375 29 570-44-25, +375 17 275-28-78, +375 29 177-44-25",
-              "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 10:00 - 17:00"
+              "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 10:00 - 17:00",
+              "image": "https://picsum.photos/id/237/200/300"
           },
           "geometry": {
             "type": "Point",
@@ -212,7 +224,8 @@
               "subtitle": "Депиляция",
               "address": "просп. Дзержинского, 84, 1 этаж",
               "phone": "+375 29 556-62-20, +375 44 799-97-57",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://picsum.photos/200/300?grayscale"
           },
           "geometry": {
             "type": "Point",
@@ -229,7 +242,8 @@
               "subtitle": "Депиляция",
               "address": "просп. Газеты Правда, 16",
               "phone": "+375 29 377-90-90, +375 17 337-90-48, +375 33 377-90-90",
-              "time": "пн.-пт. 10:00 - 20:00, сб. 09:00 - 18:00, вскр. 09:00 - 16:00"
+              "time": "пн.-пт. 10:00 - 20:00, сб. 09:00 - 18:00, вскр. 09:00 - 16:00",
+              "image": "https://picsum.photos/seed/picsum/200/300"
           },
           "geometry": {
             "type": "Point",
@@ -246,7 +260,8 @@
               "subtitle": "Депиляция",
               "address": "просп. Газеты Звязда, 23, офис 111",
               "phone": "375293518834",
-              "time": "10:00 - 20:00, ежедневно"
+              "time": "10:00 - 20:00, ежедневно",
+              "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tuv.com%2Fworld%2Fen%2Finternational-spa-standard.html&psig=AOvVaw0p0erDf9LGpxluZTPD36Pk&ust=1666214289649000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNjr1Yja6voCFQAAAAAdAAAAABAJ"
           },
           "geometry": {
             "type": "Point",
@@ -263,7 +278,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Уманская, 54, павильон 101, цокольный этаж",
               "phone": "+375 44 784-10-20, +375 17 220-49-84",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://image-tc.galaxy.tf/wijpeg-6uj1bc21xcpzauf4ny70rf8ot/adobestock-190029404-optimized.jpg?width=1920"
           },
           "geometry": {
             "type": "Point",
@@ -280,7 +296,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Железнодорожная, 136, корпус 3, 1 этаж",
               "phone": "375293154190",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://www.cvent.com/sites/default/files/styles/focus_scale_and_crop_800x450/public/image/2021-12/massage%20stones%2C%20essential%20oils%2C%20and%20sea%20salt%20set%20up%20for%20spa%20marketing.jpg?h=4bb87b2c&itok=euQKBabN"
           },
           "geometry": {
             "type": "Point",
@@ -297,7 +314,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Железнодорожная, 134",
               "phone": "+375 29 380-87-71, +375 17 322-87-71, +375 33 632-06-74",
-              "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 10:00 - 19:00"
+              "time": "пн.-пт. 08:00 - 21:00, сб. 08:00 - 20:00, вскр. 10:00 - 19:00",
+              "image": "https://solangefreire.com.br/wp-content/uploads/2019/07/2-5-768x493.jpg"
           },
           "geometry": {
             "type": "Point",
@@ -314,7 +332,8 @@
               "subtitle": "Депиляция",
               "address": "ул. Гурского, 45",
               "phone": "375296303500",
-              "time": "пн.-сб. 10:00 - 22:00, вскр. 10:00 - 20:00"
+              "time": "пн.-сб. 10:00 - 22:00, вскр. 10:00 - 20:00",
+              "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD1HzpiNuIA7Lc0Bwuhnx6v_WGdlQYhu15Yk8uU5902VjGO0e3cRddzGW9LIFTggZJoDA&usqp=CAU"
           },
           "geometry": {
             "type": "Point",
@@ -331,7 +350,8 @@
               "subtitle": "Депиляция",
               "address": "просп. Дзержинского, 15",
               "phone": "375291565250",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Spa_Sisley_Byblos.JPG"
           },
           "geometry": {
             "type": "Point",
@@ -348,7 +368,8 @@
               "subtitle": "Стрижка волос",
               "address": "просп. Дзержинского, 19, офис 861, 2 этаж",
               "phone": "+375 29 262-98-40, +375 44 562-98-40",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -365,7 +386,8 @@
               "subtitle": "Стрижка волос",
               "address": "просп. Дзержинского, 11",
               "phone": "375291665509",
-              "time": "09:00 - 22:00, ежедневно"
+              "time": "09:00 - 22:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -382,7 +404,8 @@
               "subtitle": "Стрижка волос",
               "address": "просп. Дзержинского, 9, 1 этаж",
               "phone": "375291206585",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -399,7 +422,8 @@
               "subtitle": "Стрижка волос",
               "address": "просп. Дзержинского, 9, 1 этаж",
               "phone": "375293133003",
-              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00"
+              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -416,7 +440,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Розы Люксембург, 107",
               "phone": "нет",
-              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00"
+              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -433,7 +458,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Карла Либкнехта, 79",
               "phone": "нет",
-              "time": "нет"
+              "time": "нет",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -450,7 +476,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Карла Либкнехта, 92Б, цокольный этаж",
               "phone": "+375 17 250-13-99, +375 17 286-13-99, +375 44 715-86-50, +375 29 260-25-20",
-              "time": "пн.-пт. 08:00 - 20:00, сб. 09:00 - 20:00, вскр. 09:00 - 17:00"
+              "time": "пн.-пт. 08:00 - 20:00, сб. 09:00 - 20:00, вскр. 09:00 - 17:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -467,7 +494,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Коржа, 11",
               "phone": "375173792601",
-              "time": "пн.-пт. 08:00 - 20:00, сб. 08:00 - 17:00, вскр. 09:00 - 16:00"
+              "time": "пн.-пт. 08:00 - 20:00, сб. 08:00 - 17:00, вскр. 09:00 - 16:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -484,7 +512,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Карла Либкнехта, 110",
               "phone": "+375 29 655-77-00, +375 17 234-20-21",
-              "time": "пн.-пт. 09:00 - 20:00, сб.-вскр. 10:00 - 18:00"
+              "time": "пн.-пт. 09:00 - 20:00, сб.-вскр. 10:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -501,7 +530,8 @@
               "subtitle": "Стрижка волос",
               "address": "ул. Харьковская, 86А",
               "phone": "+375 29 630-60-92, +375 17 221-20-15, +375 25 630-60-92, +375 33 630-60-90",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -518,7 +548,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Гурского, 45",
               "phone": "+375 29 576-12-14, +375 17 271-00-40, +375 44 776-12-14",
-              "time": "пн.-сб. 09:00 - 21:00, вскр. 10:00 - 19:00"
+              "time": "пн.-сб. 09:00 - 21:00, вскр. 10:00 - 19:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -535,7 +566,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Гурского, 43А",
               "phone": "+375 29 728-12-55, +375 29 728-12-55, +375 33 904-04-06",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -552,7 +584,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Алибегова, 12, помещение 12H",
               "phone": "+375 29 199-57-59, +375 33 377-57-59, +375 17 362-57-59, +375 17 199-57-59, +375 17 377-57-59",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -569,7 +602,8 @@
               "subtitle": "Окрашивание волос",
               "address": "просп. Газеты Звязда, 3",
               "phone": "375173774663",
-              "time": "пн.-сб. 09:00 - 20:00, вскр. 09:00 - 18:00"
+              "time": "пн.-сб. 09:00 - 20:00, вскр. 09:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -586,7 +620,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Алибегова, 13/1",
               "phone": "+375 17 272-53-32, +357 44 557-58-67, +375 29 861-57-62",
-              "time": "пн.-сб. 09:00 - 20:00, вскр. 10:00 - 19:00"
+              "time": "пн.-сб. 09:00 - 20:00, вскр. 10:00 - 19:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -603,7 +638,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Алибегова, 27, корпус 2, 1 этаж",
               "phone": "375173375141",
-              "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 20:00, вскр. 10:00 - 19:00"
+              "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 20:00, вскр. 10:00 - 19:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -620,7 +656,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Максима Горецкого, 2",
               "phone": "375296102388",
-              "time": "10:00 - 21:00, ежедневно"
+              "time": "10:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -637,7 +674,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Максима Горецкого, 3, помещение 109",
               "phone": "+375 29 647-01-42, +375 17 317-01-42, +375 33 627-01-42",
-              "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 20:00, вскр. 09:00 - 18:00"
+              "time": "пн.-пт. 09:00 - 21:00, сб. 09:00 - 20:00, вскр. 09:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -654,7 +692,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Янковского, 44",
               "phone": "+375 29 669-95-53, +375 17 362-98-50, +375 29 176-34-45",
-              "time": "09:00 - 21:00, ежедневно"
+              "time": "09:00 - 21:00, ежедневно",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",
@@ -671,7 +710,8 @@
               "subtitle": "Окрашивание волос",
               "address": "ул. Шаранговича, 25, павильон 2112, 2 этаж",
               "phone": "+375 29 225-07-11, +375 17 206-08-56, +375 17 225-07-11, +375 17 374-08-56",
-              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00"
+              "time": "пн.-сб. 10:00 - 21:00, вскр. 10:00 - 18:00",
+              "image": "https://images.app.goo.gl/gg65YvQgaxtXLwDn8"
           },
           "geometry": {
             "type": "Point",

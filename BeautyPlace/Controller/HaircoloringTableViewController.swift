@@ -1,18 +1,11 @@
-//
-//  HaircutTableViewController.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 1.07.22.
-//
 
 import UIKit
 import MapKit
 import FirebaseDatabase
 import Cosmos
 
-class BeauticianTableViewController: UITableViewController, CosmosProtocol {
+class HaircoloringTableViewController: UITableViewController {
     
-    let cellNew = CellOfTableView()
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
         didSet {
@@ -20,13 +13,9 @@ class BeauticianTableViewController: UITableViewController, CosmosProtocol {
         }
     }
     let cellIdentifier = "Cell"
-    let imagesForTableView = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image5"), UIImage(named: "image6"), UIImage(named: "image7"), UIImage(named: "image8"), UIImage(named: "image9"), UIImage(named: "image10")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        cellNew.delegate = self
-        view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
     }
@@ -43,62 +32,45 @@ class BeauticianTableViewController: UITableViewController, CosmosProtocol {
                 }
                 if let property = feature["properties"] as? Dictionary<String, Any>,
                    let title = property["title"] as? String,
-                   let subtitle = property.filter({$0.value as! String == "Косметология"})["subtitle"] as? String,
+                   let subtitle = property.filter({$0.value as! String == "Окрашивание волос"})["subtitle"] as? String,
                    let address = property["address"] as? String,
                    let phone = property["phone"] as? String,
-                   let time = property["time"] as? String {
-                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time))
+                   let time = property["time"] as? String,
+                   let image = property["image"] as? String {
+                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time, image: image))
                 }
             }
         }
     }
-    
-    func ratingDidChange(rating: Float) {
-        rating
-       // print(UserDefaults.standard.object(forKey: "cosmos") as Any)
-    }
-
-    func giveCosmos(cell: CellOfTableView) {
-    UserDefaults.standard.object(forKey: "cosmos")
-        print("\(cell)")
-    }
 }
+
 // MARK: - Table view data source
-extension BeauticianTableViewController {
+extension HaircoloringTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return properties.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CellOfTableView
-        cell.delegate = self
-        cell.reitingView.didFinishTouchingCosmos = { rating in
-            UserDefaults.standard.set(rating, forKey: "cosmos")
-          //  print(UserDefaults.standard.set(rating, forKey: "cosmos"))
-             }
-        
-             
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
         cell.addressLabel.text = room.address
-        cell.iconImageView.image = imagesForTableView[indexPath.row]
-        
+        cell.iconImageView.loadFrom(URLAddress: room.image)
+      
         return cell
             
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
         let customVC = CustomViewController()
         let room = properties[indexPath.row]
         customVC.titleLabelNew = room.title
         customVC.addressLabelNew = room.address
         customVC.phoneLabelNew = room.phone
         customVC.timeLabelNew = room.time
-        customVC.imageNew = imagesForTableView[indexPath.row]
+       // customVC.imageNew = imagesForTableView[indexPath.row]
         let newPoints = points[indexPath.row]
         customVC.locationLabellatitudeNew = newPoints.latitude
         customVC.locationLabellongitudeNew = newPoints.longitude

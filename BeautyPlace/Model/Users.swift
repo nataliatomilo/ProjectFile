@@ -1,9 +1,3 @@
-//
-//  Users.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 15.07.22.
-//
 
 import Foundation
 import UIKit

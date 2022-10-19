@@ -10,7 +10,6 @@ import Foundation
 
 class CustomViewForSignUp: UIView {
     let viewLabel: UIView = UIView(frame: .zero)
-    let textLabel: UILabel = UILabel(frame: .zero)
     let textField: UITextField = UITextField(frame: .zero)
     
     override init(frame: CGRect) {
@@ -26,10 +25,10 @@ class CustomViewForSignUp: UIView {
     private func setUpTextField() {
         
         addSubview(viewLabel)
-        addSubview(textLabel)
         addSubview(textField)
         
         viewLabel.backgroundColor = UIColor(named: "#C0A392")
+        viewLabel.alpha = 0.2
         viewLabel.layer.cornerRadius = 10
         viewLabel.layer.shadowColor = UIColor.black.cgColor
         viewLabel.layer.shadowOpacity = 0.07
@@ -40,7 +39,6 @@ class CustomViewForSignUp: UIView {
         addGestureRecognizer(tapGesterRecognizer)
         
         viewLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -49,9 +47,8 @@ class CustomViewForSignUp: UIView {
             viewLabel.topAnchor.constraint(equalTo: topAnchor),
             viewLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             viewLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            textLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
-            textField.leadingAnchor.constraint(equalTo: textLabel.trailingAnchor, constant: 20),
+            
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             textField.centerYAnchor.constraint(equalTo: centerYAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             heightAnchor.constraint(equalToConstant: 80)

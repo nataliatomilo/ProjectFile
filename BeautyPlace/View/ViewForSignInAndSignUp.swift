@@ -1,173 +1,163 @@
-//
-//  ViewForSignInAndSignUp.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 7.08.22.
-//
 
 import UIKit
+import FirebaseAuth
 
 class ViewForSignInAndSignUp: UIView {
     
     let beautyRoomLabel: UILabel! = {
-        let beautyRoomLabel = UILabel()
-        beautyRoomLabel.translatesAutoresizingMaskIntoConstraints = false
-        beautyRoomLabel.attributedText = NSAttributedString(string: "Beauty Room", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any])
-        
-        return beautyRoomLabel
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.attributedText = NSAttributedString(string: "Beauty Room", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        return view
     }()
     
     let signInView: UIView! = {
-        let signInView = UIView()
-        signInView.translatesAutoresizingMaskIntoConstraints = false
-        signInView.backgroundColor = UIColor(named: "#DABDAB")
-        signInView.isHidden = false
-        
-        return signInView
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.white
+        view.isHidden = false
+        return view
     }()
     
     let signInForViewButton: UIButton! = {
-        let signInForViewButton = UIButton()
-        signInForViewButton.translatesAutoresizingMaskIntoConstraints = false
-        signInForViewButton.setAttributedTitle(NSAttributedString(string: "Sign In", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
-        
-        return signInForViewButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setAttributedTitle(NSAttributedString(string: "Sign In", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
+        return view
     }()
     
     let emailForSignInTextField: CustomViewForSignUp! = {
-        let emailForSignInTextField = CustomViewForSignUp()
-        emailForSignInTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailForSignInTextField.textLabel.text = "Email:"
-        
-        return emailForSignInTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.autocapitalizationType = .none
+        view.textField.autocorrectionType = .no
+        return view
     }()
     
     let passwordForSignInTextField: CustomViewForSignUp! = {
-        let passwordForSignInTextField = CustomViewForSignUp()
-        passwordForSignInTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordForSignInTextField.textLabel.text = "Password:"
-        
-        return passwordForSignInTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.textContentType = .password
+        view.textField.isSecureTextEntry = true
+        return view
     }()
     
     let forgotPasswordButton: UIButton! = {
-        let forgotPasswordButton = UIButton()
-        forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
-        forgotPasswordButton.setAttributedTitle(NSAttributedString(string: "Forgot password?", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
-        
-        return forgotPasswordButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setAttributedTitle(NSAttributedString(string: "Forgot password?", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
+        return view
+    }()
+    
+    let emailIfForgotPassword: String! = {
+        var view = String()
+        view = Auth.auth().currentUser?.email ?? ""
+        return view
     }()
     
     let signInButton: UIButton! = {
-        let signInButton = UIButton()
-        signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.setAttributedTitle(NSAttributedString(string: "SIGN IN", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any, .backgroundColor: UIColor(named: "#D5ABDA") as Any]), for: .normal)
-        signInButton.backgroundColor = UIColor(named: "#D5ABDA")
-        signInButton.layer.cornerRadius = 10
-        
-        return signInButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setAttributedTitle(NSAttributedString(string: "SIGN IN", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any, .backgroundColor: UIColor(named: "#D5ABDA") as Any]), for: .normal)
+        view.backgroundColor = UIColor(named: "#D5ABDA")
+        view.layer.cornerRadius = 10
+        return view
     }()
     
     let orConnectWithlabel: UILabel! = {
-        let orConnectWithlabel = UILabel()
-        orConnectWithlabel.translatesAutoresizingMaskIntoConstraints = false
-        orConnectWithlabel.attributedText = NSAttributedString(string: "OR CONNECT WITH", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .light) as Any, .foregroundColor: UIColor(named: "#6E5F55") as Any])
-        
-        return orConnectWithlabel
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.attributedText = NSAttributedString(string: "OR CONNECT WITH", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .light) as Any, .foregroundColor: UIColor(named: "#6E5F55") as Any])
+        return view
     }()
     
     let googleButton: UIButton! = {
-        let googleButton = UIButton()
-        googleButton.translatesAutoresizingMaskIntoConstraints = false
-        googleButton.setImage(UIImage(named: "ImageForGoogle"), for: .normal)
-        
-        return googleButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setImage(UIImage(named: "ImageForGoogle"), for: .normal)
+        return view
     }()
     
     let facebookButton: UIButton! = {
-        let facebookButton = UIButton()
-        facebookButton.translatesAutoresizingMaskIntoConstraints = false
-        facebookButton.setImage(UIImage(named: "ImageForFacebook"), for: .normal)
-        
-        return facebookButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setImage(UIImage(named: "ImageForFacebook"), for: .normal)
+        return view
     }()
     
     let signUpView: UIView! = {
-        let signUpView = UIView()
-        signUpView.translatesAutoresizingMaskIntoConstraints = false
-        signUpView.backgroundColor = UIColor(named: "#DABDAB")
-        signUpView.isHidden = true
-        
-        return signUpView
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.white
+        view.isHidden = true
+        return view
     }()
     
     let signUpForViewButton: UIButton! = {
-        let signUpForViewButton = UIButton()
-        signUpForViewButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpForViewButton.setAttributedTitle(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
-        
-        return signUpForViewButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setAttributedTitle(NSAttributedString(string: "Sign Up", attributes: [.font: UIFont.systemFont(ofSize: 40, weight: .ultraLight), .foregroundColor: UIColor(named: "#6E5F55") as Any]), for: .normal)
+        return view
     }()
     
     let nameForSignUpTextField: CustomViewForSignUp! = {
-        let nameForSignUpTextField = CustomViewForSignUp()
-        nameForSignUpTextField.translatesAutoresizingMaskIntoConstraints = false
-        nameForSignUpTextField.textLabel.text = "Name:"
-        
-        return nameForSignUpTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.autocorrectionType = .no
+        return view
     }()
     
     let emailForSignUpTextField: CustomViewForSignUp! = {
-        let emailForSignUpTextField = CustomViewForSignUp()
-        emailForSignUpTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailForSignUpTextField.textLabel.text = "Email:"
-        
-        return emailForSignUpTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.autocapitalizationType = .none
+        view.textField.autocorrectionType = .no
+        return view
     }()
     
     let phoneForSignUpTextField: CustomViewForSignUp! = {
-        let phoneForSignUpTextField = CustomViewForSignUp()
-        phoneForSignUpTextField.translatesAutoresizingMaskIntoConstraints = false
-        phoneForSignUpTextField.textLabel.text = "Phone:"
-        
-        return phoneForSignUpTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Phone", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.autocapitalizationType = .none
+        view.textField.autocorrectionType = .no
+        return view
     }()
     
     let passwordForSignUpTextField: CustomViewForSignUp! = {
-        let passwordForSignUpTextField = CustomViewForSignUp()
-        passwordForSignUpTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordForSignUpTextField.textField.textContentType = .password
-        passwordForSignUpTextField.textField.isSecureTextEntry = true
-        passwordForSignUpTextField.textLabel.text = "Password:"
-        
-        return passwordForSignUpTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.textContentType = .password
+        view.textField.isSecureTextEntry = true
+        return view
     }()
     
     let replayPasswordForSignUpTextField: CustomViewForSignUp! = {
-        let replayPasswordForSignUpTextField = CustomViewForSignUp()
-        replayPasswordForSignUpTextField.translatesAutoresizingMaskIntoConstraints = false
-        replayPasswordForSignUpTextField.textLabel.text = "Relay password:"
-        replayPasswordForSignUpTextField.textField.leftViewMode = .always
-        replayPasswordForSignUpTextField.textField.textContentType = .password
-        replayPasswordForSignUpTextField.textField.isSecureTextEntry = true
-        
-        return replayPasswordForSignUpTextField
+        let view = CustomViewForSignUp()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textField.attributedPlaceholder = NSAttributedString(string: "Reply password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "#6E5F55") as Any])
+        view.textField.leftViewMode = .always
+        view.textField.textContentType = .password
+        view.textField.isSecureTextEntry = true
+        return view
     }()
     
     let signUpButton: UIButton! = {
-        let signUpButton = UIButton()
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.setAttributedTitle(NSAttributedString(string: "SIGN UP", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any, .backgroundColor: UIColor(named: "#D5ABDA") as Any]), for: .normal)
-        signUpButton.backgroundColor = UIColor(named: "#D5ABDA")
-        signUpButton.layer.cornerRadius = 10
-        
-        return signUpButton
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setAttributedTitle(NSAttributedString(string: "SIGN UP", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .medium), .foregroundColor: UIColor(named: "#6E5F55") as Any, .backgroundColor: UIColor(named: "#D5ABDA") as Any]), for: .normal)
+        view.backgroundColor = UIColor(named: "#D5ABDA")
+        view.layer.cornerRadius = 10
+        return view
     }()
     
     let tapGes: UITapGestureRecognizer! = {
         let tapGes = UITapGestureRecognizer()
-        
         return tapGes
     }()
-    
 }

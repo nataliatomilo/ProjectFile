@@ -1,18 +1,10 @@
-//
-//  HaircoloringTableViewController.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 1.07.22.
-//
 
 import UIKit
 import MapKit
 import FirebaseDatabase
 import Cosmos
 
-class HaircoloringTableViewController: UITableViewController {
-    
-       var ratingStorage = [Double]()
+class DepilitionTableViewController: UITableViewController {
     
     var points = [CLLocationCoordinate2D]()
     var properties = [Properties]() {
@@ -20,17 +12,10 @@ class HaircoloringTableViewController: UITableViewController {
             properties.sort { $0.title < $1.title }
         }
     }
-    
     let cellIdentifier = "Cell"
-    let imagesForTableView = [UIImage(named: "image31"), UIImage(named: "image32"), UIImage(named: "image33"), UIImage(named: "image34"), UIImage(named: "image35"), UIImage(named: "image36"), UIImage(named: "image37"), UIImage(named: "image38"), UIImage(named: "image39"), UIImage(named: "image30")]
-    var userdefault = UserDefaults.standard.object(forKey: "key")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        for i in 0..<BeauticianTableViewController.rowsCount {
-//              ratingStorage[i] = Double(i) / 99 * 5
-//            }
-        view.backgroundColor = UIColor(named: "#DABDAB")
         tableView.register(CellOfTableView.self, forCellReuseIdentifier: cellIdentifier)
         loadInit()
     }
@@ -47,27 +32,19 @@ class HaircoloringTableViewController: UITableViewController {
                 }
                 if let property = feature["properties"] as? Dictionary<String, Any>,
                    let title = property["title"] as? String,
-                   let subtitle = property.filter({$0.value as! String == "Окрашивание волос"})["subtitle"] as? String,
+                   let subtitle = property.filter({$0.value as! String == "Депиляция"})["subtitle"] as? String,
                    let address = property["address"] as? String,
                    let phone = property["phone"] as? String,
-                   let time = property["time"] as? String {
-                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time))
+                   let time = property["time"] as? String,
+                   let image = property["image"] as? String {
+                    properties.append(Properties(title: title, subtitle: subtitle, address: address, phone: phone, time: time, image: image))
                 }
             }
         }
     }
-    
-//    func ratingDidChange(rating: Float) {
-//        print(UserDefaults.standard.set(rating, forKey: "key"))
-//    }
-//
-//    func giveCosmos(cell: CellOfTableView) {
-//        print(UserDefaults.standard.object(forKey: "key") as Any)
-//       // print("\(cell.reitingView.rating)")
-//    }
 }
 // MARK: - Table view data source
-extension HaircoloringTableViewController {
+extension DepilitionTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return properties.count
@@ -75,30 +52,13 @@ extension HaircoloringTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CellOfTableView
-       // cell.delegate = self
-        let rating = UserDefaults.standard.object(forKey: "key")
-        print(rating as Any)
         cell.accessoryType = .disclosureIndicator
         let room = properties[indexPath.row]
         cell.titleLabel.text = room.title
         cell.addressLabel.text = room.address
-        cell.iconImageView.image = imagesForTableView[indexPath.row]
-        
-        
-//        cell.reitingView.rating = ratingStorage[indexPath.row]
-        cell.reitingView.update()
-        
-       // cell.reitingView.rating = UserDefaults.standard.object(forKey: "key") as! Double
-        //cell.update
-              
-              // Store the star's rating when user lifts her finger
-//        cell.reitingView.didFinishTouchingCosmos = { [self] rating in
-//            UserDefaults.standard.set(rating, forKey: "key")
-//            print(rating)
-//
-//        }
+        cell.iconImageView.loadFrom(URLAddress: room.image)
+       
         return cell
-            
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -108,7 +68,7 @@ extension HaircoloringTableViewController {
         customVC.addressLabelNew = room.address
         customVC.phoneLabelNew = room.phone
         customVC.timeLabelNew = room.time
-        customVC.imageNew = imagesForTableView[indexPath.row]
+       // customVC.imageNew = imagesForTableView[indexPath.row]
         let newPoints = points[indexPath.row]
         customVC.locationLabellatitudeNew = newPoints.latitude
         customVC.locationLabellongitudeNew = newPoints.longitude
