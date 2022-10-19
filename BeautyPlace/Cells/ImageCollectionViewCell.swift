@@ -10,7 +10,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
             imageView.image = UIImage(named: data.image)
         }
     }
-    
+
     static let reuseID = "ImageCollectionViewCell"
     
     let imageView: UIImageView = {

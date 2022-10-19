@@ -5,10 +5,9 @@ import Cosmos
 class CellOfTableView: UITableViewCell {
     
     var delegate: CosmosProtocol?
-    var id: Int = 0
-    var textFieldForCell: UITextField! = UITextField()
     var reitingView: CosmosView = {
         var view = CosmosView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.rating = 0
         view.settings.starSize = 15
         view.settings.starMargin = 1
@@ -16,18 +15,33 @@ class CellOfTableView: UITableViewCell {
         view.settings.filledColor = UIColor(named: "#7a49a5")!
         view.settings.emptyBorderColor = UIColor(named: "#7a49a5")!
         view.settings.filledBorderColor = UIColor(named: "#7a49a5")!
-        
         return view
     }()
     
-    let titleLabel: UILabel! = UILabel()
-    let iconImageView: UIImageView! = UIImageView()
-    let addressLabel: UILabel! = UILabel()
-    let emailLabel: UILabel! = UILabel()
-    let phoneLabel: UILabel! = UILabel()
-    let locationButton: UIButton! = UIButton()
-    let favouriteButton: UIButton! = UIButton()
-    let phoneButton: UIButton! = UIButton()
+    let titleLabel: UILabel! = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let iconImageView: UIImageView! = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let addressLabel: UILabel! = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let favouriteButton: UIButton! = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setImage(UIImage(named: "ImageFavourite"), for: .normal)
+        return view
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -52,13 +66,6 @@ class CellOfTableView: UITableViewCell {
     }
     
     func styleCell() {
-        favouriteButton.setImage(UIImage(named: "ImageFavourite"), for: .normal)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        favouriteButton.translatesAutoresizingMaskIntoConstraints = false
-        reitingView.translatesAutoresizingMaskIntoConstraints = false
-        
         contentView.addSubview(titleLabel)
         contentView.addSubview(iconImageView)
         contentView.addSubview(addressLabel)

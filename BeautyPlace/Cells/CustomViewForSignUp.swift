@@ -1,9 +1,3 @@
-//
-//  CustomViewForSignUp.swift
-//  BeautyPlace
-//
-//  Created by Наталья Томило on 16.07.22.
-//
 
 import UIKit
 import Foundation
@@ -15,18 +9,17 @@ class CustomViewForSignUp: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpTextField()
-        
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUpTextField()
     }
     
     private func setUpTextField() {
-        
         addSubview(viewLabel)
         addSubview(textField)
-        
+
         viewLabel.backgroundColor = UIColor(named: "#C0A392")
         viewLabel.alpha = 0.2
         viewLabel.layer.cornerRadius = 10

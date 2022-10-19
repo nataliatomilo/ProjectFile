@@ -61,7 +61,6 @@ extension BeauticianTableViewController {
         cell.iconImageView.loadFrom(URLAddress: room.image)
       
         return cell
-            
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,6 +78,7 @@ extension BeauticianTableViewController {
         self.navigationController?.pushViewController(customVC, animated: true)
     }
 }
+
 extension UIImageView {
     func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else { return }
@@ -86,9 +86,24 @@ extension UIImageView {
             [weak self] in
             if let imageData = try? Data(contentsOf: url) {
                 if let loadedImage = UIImage(data: imageData) {
-                    self?.image = loadedImage
+                    self?.image = loadedImage.circleMask
                 }
             }
         }
+    }
+}
+
+extension UIImage {
+var circleMask: UIImage {
+    let square = size.width < size.height ? CGSize(width: size.width, height: size.width) : CGSize(width: size.height, height: size.height)
+    let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+    imageView.contentMode = UIView.ContentMode.scaleAspectFill
+    imageView.image = self
+    imageView.layer.masksToBounds = true
+    UIGraphicsBeginImageContext(imageView.bounds.size)
+    imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+    let result = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return result
     }
 }
